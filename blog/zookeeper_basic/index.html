@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+  <meta charset="utf-8">
+  
+  <title>Zookeeper 知识点 · Simon Wei</title>
+  
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Zookeeper知识点概要总结">
+  <meta name="author" content="Simon Wei">
+  <meta name="generator" content="Hugo 0.105.0">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="/plugins/slick/slick.css">
+  
+  <link rel="stylesheet" href="/plugins/animate/animate.css">
+  
+  <link rel="stylesheet" href="/plugins/venobox/venobox.css">
+  
+  <link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+  
+  <link rel="stylesheet" href="/plugins/hightlight/syntax.css">
+  
+  <link rel="stylesheet" href="/plugins/fontawesome/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="/plugins/tocbot/tocbot.css">
+  
+  <link rel="stylesheet" href="/plugins/bigger-picture/bigger-picture.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="/scss/style.css" media="screen">
+
+
+  <!--Favicon-->
+  
+  <link rel="icon" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="16x16" href="images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="32x32" href="images/favicon-32x32.png" />
+
+  <link href='/opensearchdescription.xml' rel='search' title='Content search' type='application/opensearchdescription+xml'/>
+
+  
+  <!--Twitter card-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="simonwei.io" />
+  <meta name="twitter:creator" content="@simonwei" />
+  <meta property="og:url" content="https://www.simonwei.top/blog/zookeeper_basic/" />
+  <meta property="og:title" content="Zookeeper 知识点" />
+  <meta property="twitter:title" content="Zookeeper 知识点" />
+  
+  <meta property="og:description" content="Zookeeper知识点概要总结" />
+  <meta property="twitter:description" content="Zookeeper知识点概要总结" />
+  
+  
+  <meta property="og:image" content="https://www.simonwei.top/images/blog/zookeeper.png" />
+  <meta property="twitter:image" content="https://www.simonwei.top/images/blog/zookeeper.png" />
+  
+  
+  
+</head>
+<body>
+    <button onclick="topFunction()" id="backTopBtn" title="Go to top"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></button>
+
+<header class="fixed-top header">
+  
+  
+  
+  <div class="navigation w-100 ">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <a class="navbar-brand" href="/"><img class="img-fluid" width="200px"
+            src="/images/logo.png" alt="Simon Wei"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/blog">博客</a>
+              
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/contact">联系</a>
+              
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/universal">常用</a>
+              
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/about">关于</a>
+              
+            </li>
+            
+            
+
+          
+          
+          
+          <!-- search -->
+          <button id="searchOpen" class="search-btn js-search"><i class="fa fa-search text-dark"></i></button>
+          
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+    <aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6 search-title">
+          <p>站内搜索</p>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="关闭"><i class="fa fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        <i class="fa fa-search" id="search-icon" aria-hidden="true"></i>
+        <input name="q" id="search-query" placeholder="输入搜索词" autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="输入搜索词">
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+      <div id="search-common-queries">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+    
+	
+	
+<section class="bg-cover page-title-section overlay" style="background-image: url('/images/backgrounds/page-title.jpg'),url('/images/backgrounds/page-title.webp');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item h2"><a class="text-white font-secondary" href="/blog">
+            
+            
+              
+              博客
+              
+            
+          </a></li>
+                    <li class="list-inline-item"><i class="ti-angle-right text-white"></i></li>
+                    <li class="list-inline-item text-white h3 font-secondary">Zookeeper 知识点</li>
+                </ul>
+                <p class="text-white">Zookeeper知识点概要总结</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+	
+
+
+<section class="section-sm">
+  <div class="container blog">
+    <div class="row">
+      <div class="col-lg-8 article-content">
+        <div class="row">
+          <div class="col-12">
+            <ul class="list-inline">
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">日期
+                  :</span>2022年1月16日</li>
+
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">分类
+                  :</span><a
+                  href="/categories/zookeeper"> 
+                  Zookeeper</a> </li>
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">字数
+                  :</span>949 字</li>
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">阅读大约需要
+                  :</span>4 分钟</li>
+            </ul>
+          </div>
+          
+          <div class="col-12 my-4">
+            <div class="border-bottom"></div>
+          </div>
+          
+          <div class="col-12 content">
+            
+            <details class="toc-inpage d-print-none d-show-block mb-0">
+  <summary class="font-weight-bold">点击查看目录</summary>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-zookeeper-是什么有什么功能">1. Zookeeper 是什么，有什么功能</a></li>
+    <li><a href="#2-zookeeper-部署模式">2. Zookeeper 部署模式</a></li>
+    <li><a href="#3-zookeeper-是如何保证主从节点的状态同步">3. Zookeeper 是如何保证主从节点的状态同步</a></li>
+    <li><a href="#4-zookeeper-的通知机制">4. Zookeeper 的通知机制</a></li>
+    <li><a href="#5-zookeeper-的分布式锁实现方式">5. Zookeeper 的分布式锁实现方式</a></li>
+    <li><a href="#6-zookeeper-采用的哪种分布式一致性协议还有哪些分布式一致性协议">6. Zookeeper 采用的哪种分布式一致性协议？还有哪些分布式一致性协议</a></li>
+  </ul>
+</nav>
+</details>
+
+            
+            <h2 id="1-zookeeper-是什么有什么功能">1. Zookeeper 是什么，有什么功能</h2>
+<p>Zookeeper 是一个典型的分布式数据一致性的解决方案。</p>
+<p>Zookeeper 的典型应用场景：</p>
+<ul>
+<li>数据发布/订阅</li>
+<li>负载均衡</li>
+<li>命名服务</li>
+<li>分布式协调/通知</li>
+<li>集群管理</li>
+<li>Master</li>
+<li>分布式锁</li>
+<li>分布式队列</li>
+</ul>
+<h2 id="2-zookeeper-部署模式">2. Zookeeper 部署模式</h2>
+<p>Zookeeper 有两种运行模式：</p>
+<ul>
+<li>集群模式</li>
+<li>单机模式</li>
+</ul>
+<p>还有一种伪集群模式，在单机模式下模拟集群的 Zookeeper 服务。</p>
+<h2 id="3-zookeeper-是如何保证主从节点的状态同步">3. Zookeeper 是如何保证主从节点的状态同步</h2>
+<p>zookeeper 的核心是原子广播，这个机制保证了各个 server 之间的同步。实现这个机制的协议叫做<code>zab</code>协议。<code>zab</code> 协议有两种，分别是恢复模式（选主）和广播模式（同步）。
+当服务启动或者在领导者崩溃之后，zab 就进入了恢复模式，当领导者被选举出来后，且大多数 server 完成了与 leader 的状态同步之后，恢复模式就结束了。状态同步保证了
+leader 和 server 具有相同的系统状态。</p>
+<h2 id="4-zookeeper-的通知机制">4. Zookeeper 的通知机制</h2>
+<p>客户端会对某一个 <code>znode</code> 建立一个 <code>watcher</code> 事件，当该 <code>znode</code> 发生变化时，这些客户端会受到 <code>Zookeeper</code> 的通知，然后客户端可以根据 <code>znode</code> 变化来做出业务上的改变。ß</p>
+<h2 id="5-zookeeper-的分布式锁实现方式">5. Zookeeper 的分布式锁实现方式</h2>
+<p>使用 Zookeeper 实现分布式锁的算法流程，假设锁空间根节点为 <code>/lock</code>：</p>
+<ol>
+<li>客户端连接 Zookeeper，并在 <code>/lock</code> 下创建临时的且有序的子节点，第一个客户端对应的子节点为 <code>/lock/lock-0000000000</code>，第二个为 <code>/lock/lock-0000000001</code>，
+以此类推；</li>
+<li>客户端获取 下的子节点列表，判断自己创建的子节点是否为当前子节点列表中序号最小的子节点，如果是则认为获得锁，否则监听刚好在自己之前一位的子节点删除消息，获得子节点
+变更通知后重复此步骤直至获得锁；</li>
+<li>执行业务代码；</li>
+<li>完成业务流程后，删除对应的子节点释放锁；</li>
+</ol>
+<h2 id="6-zookeeper-采用的哪种分布式一致性协议还有哪些分布式一致性协议">6. Zookeeper 采用的哪种分布式一致性协议？还有哪些分布式一致性协议</h2>
+<p>常见的分布式一致性协议有：两阶段提交协议，三阶段提交协议，向量时钟，RWN 协议，<code>paxos 协议</code>，<code>Raft 协议</code>，zk 采用的是 <code>paxos 协议</code>ß。</p>
+<ul>
+<li>
+<p>两阶段提交协议(2PC)</p>
+<p>两阶段提交协协议，简称 2PC，是比较常用的解决分布式事务问题的方式，要么所有参与进程都提交事务，要么都取消事务，即实现 ACID 中的原子性(A)的常用手段。</p>
+</li>
+<li>
+<p>三阶段提交协议(2PC)</p>
+<p>3PC 就是在 2PC 的基础上将 2PC 的提交阶段再细分为两个阶段：<strong>预提交阶段</strong>和<strong>提交阶段</strong>。</p>
+</li>
+<li>
+<p>向量时钟</p>
+<p>通过向量空间祖先继承的关系比较，使数据保持最终一致性，这就是向量时钟的基本定义。</p>
+</li>
+<li>
+<p>NWR 协议</p>
+<p>NWR 是一种在分布式存储系统中用于控制一致性级别的一种策略。</p>
+</li>
+<li>
+<p>paxos 协议</p>
+<p>见 <a href="" title="paxos 协议">paxos 协议</a>
+</p>
+</li>
+<li>
+<p>Raft 协议</p>
+<p>见 <a href="" title="Raft 协议">Raft 协议</a>
+</p>
+</li>
+</ul>
+
+          </div>
+
+          <div class="col-12 mb-4">
+            <div class="border-bottom">
+            
+
+
+<p class="edit-page">
+<a href="https://github.com/simonwei97/website/edit/main/content/zh/blog/zookeeper_basic/index.md">
+  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑本页
+  </a>
+</p>
+
+
+            </div>
+          </div>
+          
+          <div class="col-12">
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light">
+              
+              <a href="/tags/zookeeper" class="badge"> 
+                  Zookeeper</a> </li>
+          </div>
+
+          
+          
+<div class="col-12">
+<ul class="pager blog-pager">
+
+<li class="previous">
+<a href="https://www.simonwei.top/blog/network_basic/" data-toggle="tooltip" data-placement="top" title="网络编程知识">&larr; 上一篇</a>
+</li>
+ 
+<li class="next">
+<a href="https://www.simonwei.top/blog/docker_basic/" data-toggle="tooltip" data-placement="top" title="Docker 入门知识简要概述">下一篇 &rarr;</a>
+</li>
+
+</ul>
+</div>
+
+
+          
+          
+          <div class="col-12">
+          
+           <script src="https://giscus.app/client.js"
+        data-repo="simonwei97/simonwei97.github.io"
+        data-repo-id="R_kgDOJlpFkg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOJlpFks4CWopE"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        
+        data-lang="zh-CN"
+        
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+          
+          </div>
+        </div>
+      </div>
+      <!-- sidebar -->
+      <aside class="col-lg-4 sidebar">
+      <!-- recommend -->
+      
+
+
+      <!-- /recommend -->
+      <!-- toc -->
+      
+<div class="bg-white py-4 box-shadow mb-4 sticky-top aside-toc d-none d-sm-block">
+    <p class="sidebar-title">
+    目录
+    </p>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-zookeeper-是什么有什么功能">1. Zookeeper 是什么，有什么功能</a></li>
+    <li><a href="#2-zookeeper-部署模式">2. Zookeeper 部署模式</a></li>
+    <li><a href="#3-zookeeper-是如何保证主从节点的状态同步">3. Zookeeper 是如何保证主从节点的状态同步</a></li>
+    <li><a href="#4-zookeeper-的通知机制">4. Zookeeper 的通知机制</a></li>
+    <li><a href="#5-zookeeper-的分布式锁实现方式">5. Zookeeper 的分布式锁实现方式</a></li>
+    <li><a href="#6-zookeeper-采用的哪种分布式一致性协议还有哪些分布式一致性协议">6. Zookeeper 采用的哪种分布式一致性协议？还有哪些分布式一致性协议</a></li>
+  </ul>
+</nav>
+</div>
+
+      <!-- /toc -->
+      </aside>
+      <!-- /sidebar -->
+    </div>
+  </div>
+</section>
+
+
+
+      
+    
+
+<footer>
+  
+  <div class="footer bg-footer section-sm border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          
+          <h4 class="text-white mb-5 text-uppercase">关注我</h4>
+          
+          <ul class="list-unstyled">
+            
+            
+            <li class="mb-4 text-color">欢迎来到本站!</li>
+            
+            
+            
+            
+          
+        </div>
+        
+        
+
+        
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">博客</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="/blog/linux_common/">Linux常用命令</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="/blog/asan/">ASAN内存检测工具</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="/blog/data_structure/data_structure/">数据结构</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="/blog/es_bulk_insert_go/">Elasticsearch 批量写入</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="/blog/golang_basic/">Go基础知识总结</a></li>
+            
+          </ul>
+        </div>
+
+        
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">链接</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://kubernetes.io/" target="_blank" rel="noopener">Kubernetes社区</a></li>
+            
+          </ul>
+        </div>
+
+        
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">教程</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://kubernetes.io/zh-cn/docs/tutorials/kubernetes-basics/" target="_blank" rel="noopener">学习 Kubernetes 基础知识</a></li>
+            
+          </ul>
+        </div>
+
+        
+        
+
+        
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">友链</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://jimmysong.io" target="_blank" rel="noopener">Jimmy Song 的博客</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://qcrao.com/" target="_blank" rel="noopener">码农桃花源</a></li>
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 text-sm-left text-center">
+          <p class="mb-0 text-color">© 2017-2023 Simon Wei 保留所有权利</p>
+        </div>
+        <div class="col-sm-3 text-sm-right text-center">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://github.com/simonwei97" target="_blank" rel="noopener"><i class="fa fa-github "></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://linkedin.com/in/simonweiio" target="_blank" rel="noopener"><i class="fa fa-linkedin "></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="mailto:simonwei@simonwei.top" target="_blank" rel="noopener"><i class="fa fa-envelope "></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="/blog/index.xml" target="_blank" rel="noopener"><i class="fa fa-rss "></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/popper/popper.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/slick/slick.min.js"></script>
+
+<script src="/plugins/venobox/venobox.min.js"></script>
+
+<script src="/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<script src="/plugins/search/fuse.min.js"></script>
+
+<script src="/plugins/search/mark.js"></script>
+
+<script src="/plugins/hex_md5/hex_md5.js"></script>
+
+<script src="/plugins/anchor/anchor.min.js"></script>
+
+<script src="/plugins/tocbot/tocbot.min.js"></script>
+
+<script src="/plugins/bigger-picture/bigger-picture.min.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESY906ZWZ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ESY906ZWZ0');
+</script>
+
+
+<!-- Baidu analysis -->
+<meta name="baidu-site-verification" content="g8IYR9SNLF" />
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?11f7d254cfa4e0ca44b175c66d379ecc";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+
+var mybutton = document.getElementById("backTopBtn");
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+
+
+
+
+<script>
+    anchors.add()
+</script>
+
+
+
+
+<script>
+
+
+
+(function() {
+  'use strict';
+
+  if(!document.queryCommandSupported('copy')) {
+    return;
+  }
+
+  function flashCopyMessage(el, msg) {
+    el.className = "highlight-copy-btn";
+    el.textContent = msg;
+    setTimeout(function() {
+      el.textContent = "";
+      el.className = "highlight-copy-btn fa fa-copy";
+    }, 1000);
+  }
+
+  function selectText(node) {
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    return selection;
+  }
+
+  function addCopyButton(containerEl) {
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "highlight-copy-btn fa fa-copy";
+    copyBtn.textContent = "";
+
+    var codeEl = containerEl.firstElementChild;
+    copyBtn.addEventListener('click', function() {
+      try {
+        var selection = selectText(codeEl);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+        
+        flashCopyMessage(copyBtn, '已复制')
+        
+      } catch(e) {
+        console && console.log(e);
+        flashCopyMessage(copyBtn, 'Failed :\'(')
+      }
+    });
+
+    containerEl.appendChild(copyBtn);
+  }
+
+  
+  var highlightBlocks = document.getElementsByClassName('highlight');
+  Array.prototype.forEach.call(highlightBlocks, addCopyButton);
+})();
+</script>
+
+
+
+
+<script>
+tocbot.init({
+  
+  tocSelector: '.aside-toc #TableOfContents',
+  
+  contentSelector: '.content',
+  
+  headingSelector: 'h1, h2, h3, h4',
+  
+  hasInnerContainers: false,
+  collapseDepth: 3
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/wowchemy-search.min.19451fcb1ed27bb11a0d08ad5cd74a66.js" type="module"></script>
+<script id="search-hit-fuse-template" type="text/x-template">
+  <div class="search-hit" id="summary-{{key}}">
+    <div class="search-hit-content">
+      <div class="search-hit-name">
+        <div class="article-metadata search-hit-type">{{relpermalink}}</div>
+        <a href="{{relpermalink}}">{{title}}</a>
+        <p class="search-hit-description">{{snippet}}</p>
+      </div>
+    </div>
+  </div>
+</script>
+
+
+</body>
+
+</html>

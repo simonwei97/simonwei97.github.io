@@ -1,0 +1,7 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>Search within Simon Wei's Website</ShortName>
+    <Description>Search Simon Wei's website via OpenSearch</Description>
+    <Tags>Simon Wei</Tags>
+    <Contact>simonwei@simonwei.top</Contact>
+    <Url type="text/html" template="https://simonwei.top/search?q={searchTerms}"/>
+</OpenSearchDescription>

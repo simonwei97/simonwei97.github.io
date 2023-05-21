@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+  <meta charset="utf-8">
+  
+  <title>MySQL 知识点 · Simon Wei</title>
+  
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MySQL知识点概要总结">
+  <meta name="author" content="Simon Wei">
+  <meta name="generator" content="Hugo 0.105.0">
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="/plugins/slick/slick.css">
+  
+  <link rel="stylesheet" href="/plugins/animate/animate.css">
+  
+  <link rel="stylesheet" href="/plugins/venobox/venobox.css">
+  
+  <link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css">
+  
+  <link rel="stylesheet" href="/plugins/hightlight/syntax.css">
+  
+  <link rel="stylesheet" href="/plugins/fontawesome/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="/plugins/tocbot/tocbot.css">
+  
+  <link rel="stylesheet" href="/plugins/bigger-picture/bigger-picture.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="/scss/style.css" media="screen">
+
+
+  <!--Favicon-->
+  
+  <link rel="icon" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="16x16" href="images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="32x32" href="images/favicon-32x32.png" />
+
+  <link href='/opensearchdescription.xml' rel='search' title='Content search' type='application/opensearchdescription+xml'/>
+
+  
+  <!--Twitter card-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="simonwei.io" />
+  <meta name="twitter:creator" content="@simonwei" />
+  <meta property="og:url" content="https://www.simonwei.top/blog/mysql_basic/" />
+  <meta property="og:title" content="MySQL 知识点" />
+  <meta property="twitter:title" content="MySQL 知识点" />
+  
+  <meta property="og:description" content="MySQL知识点概要总结" />
+  <meta property="twitter:description" content="MySQL知识点概要总结" />
+  
+  
+  <meta property="og:image" content="https://www.simonwei.top/images/blog/mysql.png" />
+  <meta property="twitter:image" content="https://www.simonwei.top/images/blog/mysql.png" />
+  
+  
+  
+</head>
+<body>
+    <button onclick="topFunction()" id="backTopBtn" title="Go to top"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></button>
+
+<header class="fixed-top header">
+  
+  
+  
+  <div class="navigation w-100 ">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
+        <a class="navbar-brand" href="/"><img class="img-fluid" width="200px"
+            src="/images/logo.png" alt="Simon Wei"></a>
+        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/blog">博客</a>
+              
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/tags">标签</a>
+              
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/contact">联系</a>
+              
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/universal">常用</a>
+              
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/about">关于</a>
+              
+            </li>
+            
+            
+
+          
+          
+          
+          <!-- search -->
+          <button id="searchOpen" class="search-btn js-search"><i class="fa fa-search text-dark"></i></button>
+          
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+    <aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6 search-title">
+          <p>站内搜索</p>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="关闭"><i class="fa fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        <i class="fa fa-search" id="search-icon" aria-hidden="true"></i>
+        <input name="q" id="search-query" placeholder="输入搜索词" autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="输入搜索词">
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+      <div id="search-common-queries">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+    
+	
+	
+<section class="bg-cover page-title-section overlay" style="background-image: url('/images/backgrounds/page-title.jpg'),url('/images/backgrounds/page-title.webp');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item h2"><a class="text-white font-secondary" href="/blog">
+            
+            
+              
+              博客
+              
+            
+          </a></li>
+                    <li class="list-inline-item"><i class="ti-angle-right text-white"></i></li>
+                    <li class="list-inline-item text-white h3 font-secondary">MySQL 知识点</li>
+                </ul>
+                <p class="text-white">MySQL知识点概要总结</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+	
+
+
+<section class="section-sm">
+  <div class="container blog">
+    <div class="row">
+      <div class="col-lg-8 article-content">
+        <div class="row">
+          <div class="col-12">
+            <ul class="list-inline">
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">日期
+                  :</span>2022年1月24日</li>
+
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">分类
+                  :</span><a
+                  href="/categories/mysql"> 
+                  Mysql</a> </li>
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">字数
+                  :</span>5186 字</li>
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">阅读大约需要
+                  :</span>24 分钟</li>
+            </ul>
+          </div>
+          
+          <div class="col-12 my-4">
+            <div class="border-bottom"></div>
+          </div>
+          
+          <div class="col-12 content">
+            
+            <details class="toc-inpage d-print-none d-show-block mb-0">
+  <summary class="font-weight-bold">点击查看目录</summary>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-什么是死锁怎么解决">1. 什么是死锁？怎么解决？</a></li>
+    <li><a href="#2-隔离级别与锁的关系">2. 隔离级别与锁的关系</a></li>
+    <li><a href="#3mysql-主从同步延时问题如何解决">3.MySQL 主从同步延时问题如何解决？</a></li>
+    <li><a href="#4-一条-sql-语句的执行过程">4. 一条 SQL 语句的执行过程</a></li>
+    <li><a href="#5-索引">5. 索引</a>
+      <ul>
+        <li><a href="#51-最左匹配原则">5.1. 最左匹配原则</a></li>
+        <li><a href="#52-聚簇索引和非聚簇索引的区别">5.2. 聚簇索引和非聚簇索引的区别</a></li>
+        <li><a href="#53-mysql-为什么使用-b树索引">5.3. MySQL 为什么使用 B+树索引</a></li>
+        <li><a href="#54-为什么使用自增主键">5.4. 为什么使用自增主键</a></li>
+        <li><a href="#55-索引的缺点">5.5. 索引的缺点</a></li>
+        <li><a href="#56-索引下推">5.6. 索引下推</a></li>
+        <li><a href="#57-索引失效">5.7. 索引失效</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-事务">6. 事务</a>
+      <ul>
+        <li><a href="#61-mvcc">6.1. MVCC</a></li>
+        <li><a href="#62-mysql-的隔离级别">6.2. MySQL 的隔离级别</a></li>
+        <li><a href="#63-共享锁排它锁">6.3. 共享锁，排它锁</a></li>
+        <li><a href="#64-记录锁临键锁间隙锁">6.4. 记录锁，临键锁，间隙锁</a></li>
+        <li><a href="#65-innodb-引擎和-myisam-引擎的区别">6.5. innodb 引擎和 MyISAM 引擎的区别</a></li>
+        <li><a href="#66-为什么事务提交了但是数据没有保存">6.6. 为什么事务提交了但是数据没有保存</a></li>
+        <li><a href="#67-什么是-redo-log-undo-log-和-binlog">6.7. 什么是 redo log, undo log 和 binlog</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+</details>
+
+            
+            <h2 id="1-什么是死锁怎么解决">1. 什么是死锁？怎么解决？</h2>
+<p>死锁是指两个或多个事务在同一资源上相互占用，并请求锁定对方的资源，从而导致恶性循环的现象。</p>
+<div class="alert">
+
+<div class="alert-note-title py-1 px-2">
+  常见的解决死锁的方法
+</div>
+
+<div class="alert-note py-1 px-2">
+  <ul>
+<li>如果不同程序会并发存取多个表，尽量约定以相同的顺序访问表，可以大大降低死锁机会。</li>
+<li>在同一个事务中，尽可能做到一次锁定所需要的所有资源，减少死锁产生概率；</li>
+<li>对于非常容易产生死锁的业务部分，可以尝试使用升级锁定颗粒度，通过表级锁定来减少死锁产生的概率；</li>
+</ul>
+
+</div>
+</div>
+
+<p>如果业务处理不好可以用分布式事务锁或者使用乐观锁</p>
+<h2 id="2-隔离级别与锁的关系">2. 隔离级别与锁的关系</h2>
+<ul>
+<li>在 <strong>Read Uncommitted</strong> 级别下，读取数据不需要加共享锁，这样就不会跟被修改的数据上的排他锁冲突</li>
+<li>在 <strong>Read Committed</strong> 级别下，读操作需要加共享锁，但是在语句执行完以后释放共享锁；</li>
+<li>在 <strong>Repeatable Read</strong> 级别下，读操作需要加共享锁，但是在事务提交之前并不释放共享锁，也就是必须等待事务执行完毕以后才释放共享锁。</li>
+<li><strong>SERIALIZABLE</strong> 是限制性最强的隔离级别，因为该级别锁定整个范围的键，并一直持有锁，直到事务完成。</li>
+</ul>
+<h2 id="3mysql-主从同步延时问题如何解决">3.MySQL 主从同步延时问题如何解决？</h2>
+<p>MySQL 实际上在有两个同步机制，一个是半同步复制，用来 解决主库数据丢失问题；一个是并行复制，用来 解决主从同步延时问题。</p>
+<ul>
+<li>
+<p><strong>半同步复制</strong>，也叫 <strong>semi-sync 复制</strong>，指的就是主库写入 <code>binlog</code> 日志之后，就会将强制此时立即将数据同步到从库，从库将日志写入自己本地的 <code>relay log</code> 之后，接着会返回一个 <code>ack</code> 给主库，主库接收到至少一个从库的 <code>ack</code> 之后才会认为写操作完成了。</p>
+</li>
+<li>
+<p><strong>并行复制</strong>，指的是从库开启多个线程，并行读取 <code>relay log</code> 中不同库的日志，然后并行重放不同库的日志，这是库级别的并行。</p>
+</li>
+</ul>
+<h2 id="4-一条-sql-语句的执行过程">4. 一条 SQL 语句的执行过程</h2>
+<ul>
+<li>客户端发送一条查询给服务器。</li>
+<li>服务器先检查，<strong>查询缓存</strong>，如果命中了缓存，则立刻返回存储在缓存中的结果。否则进入下一阶段。</li>
+<li>服务器端进行<strong>SQL 解析、预处理</strong>，再由<strong>优化器生成对应的执行计划</strong>。</li>
+<li>MySQL 根据优化器生成的执行计划，再调用<strong>存储引擎的 API 来执行查询</strong>。</li>
+<li>将结果返回给客户端。</li>
+</ul>
+<p><figure class="mx-auto text-center">
+  
+  
+  
+  
+    
+    <img src="/blog/mysql_basic/sql_pipeline.png" data-img="/blog/mysql_basic/sql_pipeline.png" data-width="1664" data-height="1168" alt="image" data-caption="一条SQL语句的执行过程">
+    
+  
+  <figcaption>一条SQL语句的执行过程</figcaption>
+</figure>
+</p>
+<h2 id="5-索引">5. 索引</h2>
+<p>索引是为了加快数据查询的一种数据结构。</p>
+<p>从数据结构角度出发，索引分为 <strong>B 树索引</strong>，<strong>B+树</strong>索引，哈希索引和位图索引。 在 MySQL 上，主要是采用 B+树索引，B 树索引在 NoSQL 上使用较多，哈希索引在 KV 数据库上较为常见。</p>
+<p>从形态上来说，可以分成覆盖索引，前缀索引，全文索引，联合索引，唯一索引和主键索引。（下面的定义，可以直接一股脑说出来，也可以等面试官问）</p>
+<ul>
+<li><strong>覆盖索引</strong>其实是指我们查询的列全部命中了索引；</li>
+<li><strong>前缀索引</strong>是指只利用了数据前几个字符的索引，如果前面几个字符区分度不好的话，不建议使用前缀索引；</li>
+<li><strong>全文索引</strong>现在比较少用，一般推荐使用别的中间件来完成，例如 ES（小心这一步，可能咔嚓把话题引过去了 ES 上）；</li>
+<li><strong>联合索引</strong>是指多个列组成一个索引。创建的时候我们会考虑把区分度好的索引放在前面，因为 MySQL 遵循最左前缀匹配原则；（这里可能会问你啥是最左前缀匹配原则）</li>
+<li><strong>唯一索引</strong>是指数据库里面要求该索引值必须要唯一，我们一般用于业务唯一性保证；</li>
+<li><strong>主键索引</strong>是比较特殊的索引，一般它的叶子节点要么存储了数据，要么存储了指向数据的指针。MySQL 的 innodb 引擎存储的是数据，MyISAM 放的是数据的地址；</li>
+<li>从是否存储数据的角度，又可以分为<strong>聚簇索引</strong>和<strong>非聚簇索引</strong>，MySQL 的主键就是聚簇索引，每张表唯一一个，非聚簇索引的数据本质上存储的是主键。</li>
+</ul>
+<p>而对于 MySQL 的 innodb 来说，它的行锁是利用索引来实现的，所以如果查询的时候没有索引，那么会导致表锁。</p>
+<h3 id="51-最左匹配原则">5.1. 最左匹配原则</h3>
+<p>最左前缀匹配原则是指，MySQL 会按照联合索引创建的顺序，从左至右开始匹配。</p>
+<p>例如创建了一个联合索引（A，B，C)，那么本质上来说，是创建了 A，（A，B），（A，B，C）三个索引。之所以如此，因为 MySQL 在使用索引的时候，类似于多重循环，一个列就是一个循环。</p>
+<p>在这种原则下，我们会优先考虑把区分度最好的放在最左边，而区分度可以简单使用不同值的数量除以总行数来计算（<code>distinct(a, b, c)/count(\*)</code>）。</p>
+<h3 id="52-聚簇索引和非聚簇索引的区别">5.2. 聚簇索引和非聚簇索引的区别</h3>
+<p>聚簇索引是指叶子节点存储了数据的索引。MySQL 整张表可以看做是一个聚簇索引。因为非聚簇索引没有存储数据，所以一般是存储了主键。于是会导致一个回表的问题。即如果我们查询的列包含不在索引上的列，这会引起数据库先根据非聚簇索引找出主键，而后拿着主键去聚簇索引里边捞出来数据。而根据主键找数据会引起磁盘 IO，性能大幅度下降。这就是我们推荐使用覆盖索引的原因。</p>
+<h3 id="53-mysql-为什么使用-b树索引">5.3. MySQL 为什么使用 B+树索引</h3>
+<p>MySQL 使用 B+树主要就是考虑三个角度：</p>
+<div class="alert">
+
+<div class="alert-note-title py-1 px-2">
+  B&#43;树的磁盘读写代价更低
+</div>
+
+<div class="alert-note py-1 px-2">
+  B+树的内部结点并没有指向关键字具体信息的指针。因此其内部结点相对 B 树更小。如果把所有同一内部结点的关键字存放在同一盘块中，那么盘块所能容纳的关键字数量也越多。一次性读入内存中的需要查找的关键字也就越多。相对来说 IO 读写次数也就降低了；
+</div>
+</div>
+
+<div class="alert">
+
+<div class="alert-note-title py-1 px-2">
+  B&#43;树查询效率更加稳定
+</div>
+
+<div class="alert-note py-1 px-2">
+  由于非终结点并不是最终指向文件内容的结点，而只是叶子结点中关键字的索引。所以任何关键字的查找必须走一条从根结点到叶子结点的路。所有关键字查询的路径长度相同，导致每一个数据的查询效率相当；
+</div>
+</div>
+
+<div class="alert">
+
+<div class="alert-note-title py-1 px-2">
+  B&#43;树便于范围查询（最重要的原因，范围查找是数据库的常态）
+</div>
+
+<div class="alert-note py-1 px-2">
+  B 树在提高了 IO 性能的同时并没有解决元素遍历的我效率低下的问题，正是为了解决这个问题，B+树应用而生。B+树只需要去遍历叶子节点就可以实现整棵树的遍历。而且在数据库中基于范围的查询是非常频繁的，而 B 树不支持这样的操作或者说效率太低；具体可查看[范围查找]。
+</div>
+</div>
+
+<h3 id="54-为什么使用自增主键">5.4. 为什么使用自增主键</h3>
+<p>MySQL 的主键是一个聚簇索引，即它的叶子节点存放了数据。 在使用自增主键的情况下，会保证树的分裂照着单方向分裂的，这会大概率导致物理页的分裂也是朝着单方向进行的，即连续的。 在不使用自增主键的情况下，如果在已经满的页里面插入，会导致 MySQL 页分裂，虽然逻辑上页依旧是连续的，但是物理页已经不连续了。 如果在使用机械硬盘的情况下，会导致范围查询经常导致机械硬盘重新定位，性能差。</p>
+<div class="alert">
+
+<div class="alert-warning-title py-1 px-2">
+  关键点
+</div>
+
+<div class="alert-warning py-1 px-2">
+  单方向增长，物理页连续
+</div>
+</div>
+
+<h3 id="55-索引的缺点">5.5. 索引的缺点</h3>
+<p>索引的维护是有开销的。在增改数据的时候，数据库都要对应修改索引；而如果索引过多，以至于内存没法装下全部索引，那么会导致访问索引本身都会触发 IO。所以索引不是越多越好。比如<em>为了避免数据量过大，某些时候我们会使用前缀索引</em>。</p>
+<h3 id="56-索引下推">5.6. 索引下推</h3>
+<p>索引下推是指将于索引有关的条件由 MySQL 服务器下推到引擎。例如按照名字存取姓张的，like &ldquo;张%&quot;。在原来没有索引下推的时候，即便在用户名字上建立了索引，但是还是不能利用这个索引。而在支持索引下推的引擎上，<strong>引擎就可以利用名字索引，将数据提前过滤，避免回表</strong>。目前 innodb 引擎和 MyISAM 都支持索引下推。索引下推和覆盖索引的理念都是一致的，尽量避免回表。</p>
+<h3 id="57-索引失效">5.7. 索引失效</h3>
+<p>没有使用索引主要有两大类原因，一种是自己 SQL 没写好，例如：</p>
+<p>索引列上做了计算
+like 关键字用了前缀匹配，例如”%abc“。注意的是，后缀匹配是可以用索引；
+字符串没有引号导致类型转换
+另一种，则是 MySQL 判断到使用索引的代价很高，比如说要全索引扫描并且回表，那么就会退化成为全表扫描。数据库数据量的大小和数据分布，会影响 MySQL 的决策。</p>
+<h2 id="6-事务">6. 事务</h2>
+<p>在 MySQL 上，innodb 引擎支持事务，但是 MyISAM 不支持事务。innodb 引擎是通过 MVCC 来支持事务的。</p>
+<h3 id="61-mvcc">6.1. MVCC</h3>
+<p>MVCC，多版本并发控制。innodb 引擎主要是通过 <strong><code>undo log</code> 和事务版本号来实现多版本，利用锁机制来实现并发控制</strong>。</p>
+<p>innodb 引擎会给每张表加一个隐含的列，存储的是事务版本号。当修改数据的时候，会生成一条对应的 <code>undo log</code>，<code>undo log</code> 一般用于事务回滚，里面含有版本信息。简单来说可以认为 <code>undo log</code> 存储了历史版本数据。每当发起查询的时候，MySQL 依据隔离级别的设置生成 <code>Read View</code>，来判断当前查询可以读取哪个版本的数据。例如，在已提交读的隔离级别下，可以从 <code>undo log</code> 中读取到已经提交的最新数据，而不会读取到当前正在修改尚未提交的事务的数据。</p>
+<p>而锁机制，对于 innodb 来说，有多个维度：</p>
+<ul>
+<li>从独占性来说，有排他锁和共享锁；</li>
+<li>从锁粒度来说，有行锁和表锁；</li>
+<li>从意向来说，有排他意向锁和共享意向锁；</li>
+<li>从场景来说，还可以分为记录锁，间隙锁和临键锁；</li>
+</ul>
+<div class="alert">
+
+<div class="alert-warning-title py-1 px-2">
+  关键点
+</div>
+
+<div class="alert-warning py-1 px-2">
+  多版本 = undo log + 事务版本号，并发控制=各种锁
+</div>
+</div>
+
+<h3 id="62-mysql-的隔离级别">6.2. MySQL 的隔离级别</h3>
+<p>数据库的隔离级别有四种：</p>
+<ul>
+<li><strong>未提交读(Read Uncommitted)</strong>：事务可以读取另外一个事务没有提交的数据。 问题：脏读，不可重复读，幻读</li>
+<li><strong>提交读(Read Committed)</strong>：事务只能读取到另外一个已经提交的事务数据。 问题： 不可重复度，幻读</li>
+<li><strong>重复读(Repeatable Read)</strong>：事务执行过程查询结果都是一致的，innodb 默认级别。 问题： 幻读</li>
+<li><strong>串行化(SERIALIZABLE)</strong>：读写都会相互阻塞 问题：</li>
+</ul>
+<h4 id="mvcc-方向">MVCC 方向：</h4>
+<p>innodb 引擎利用了 Read View 来支持提交读和重复读。Read View 里面维护这三个变量：</p>
+<ul>
+<li>up_limit_id：已提交事务 ID + 1</li>
+<li>low_limit_id：最大事务 ID + 1</li>
+<li>txn_ids：当前执行的事务 ID</li>
+</ul>
+<p>提交读这个级别，默认读取是不加锁的，只有修改才会加锁。简单来说，已提交读，是每次查询都生成一个新的 Read View，所以永远都能看到已经提交的事务。</p>
+<p>可重复读则是在第一次查询生成 Read View 之后，后面的查询都是使用这个 Read View。</p>
+<h4 id="snapshot-isolation-方向">snapshot isolation 方向：</h4>
+<p>innodb 引擎的可重复读隔离级别，要比定义的隔离级别更加严苛一点。一般的可重复读，无法解决幻读的问题。比如说原本你事务里面查询订单信息，这个时候又插入了一个新的订单，那么这种时候，幻读就会导致我们下一个查询就会查询到这条记录。但是 innodb 引擎的隔离级别并不会出现这个问题。</p>
+<p>因为 innodb 引擎使用了临键锁，在“当前读”，也就是写的时候，锁住了记录之间的空档，防止插入数据。</p>
+<h3 id="63-共享锁排它锁">6.3. 共享锁，排它锁</h3>
+<ul>
+<li>共享锁指别的事务可以读，但是不可以写。</li>
+<li>排他锁，是指别的事务既不可以读也不可以写。</li>
+</ul>
+<p>与之非常类似的是，意向共享锁和意向排他锁，事务在获取共享锁或者排他锁之前，要先获得对应的意向锁。意向锁是数据库自己加的，不需要干预。
+排它锁和其它三种都互斥；（X 排斥一切） 意向排它锁和意向锁兼容；（IX 兼容 I） 共享锁和共享锁、意向共享锁兼容；（S 兼容 S）</p>
+<h3 id="64-记录锁临键锁间隙锁">6.4. 记录锁，临键锁，间隙锁</h3>
+<p>记录锁：锁住一行，所以叫做记录锁，也是行锁；
+间隙锁：锁住记录之间的间隔，或者索引之前的范围，或者所以之后的范围。只在重复读级别产生，（可以在前面隔离级别的地方提）
+临键锁（Next key lock）:记录锁和间隙锁的组合，即锁住记录，又锁住了间隙</p>
+<h3 id="65-innodb-引擎和-myisam-引擎的区别">6.5. innodb 引擎和 MyISAM 引擎的区别</h3>
+<p>innodb 引擎和 MyISAM 最大的区别是事务、索引、锁支持。</p>
+<ul>
+<li>innodb 引擎支持事务，而 MyISAM 不支持；</li>
+<li>innodb 引擎的主键索引的叶子节点存放的是数据本身，而 MyISAM 存储的是数据的地址，需要再一次寻址；</li>
+<li>innodb 支持行锁，而 MyISAM 只支持表锁，因此 innodb 支持的并发粒度更细更高；</li>
+</ul>
+<p>一般来说，在不使用事务，数据修改少而读多的时候，又或者机器比较差的时候，用 MyISAM 比较合适。</p>
+<h3 id="66-为什么事务提交了但是数据没有保存">6.6. 为什么事务提交了但是数据没有保存</h3>
+<p>在 MySQL 的 innodb 引擎中，事务提交后，必须将数据刷盘到磁盘上，如果在事务提交之后，没来得及刷到磁盘，就会出现事务已经提交，但是数据丢失了。（回到这一步你要开始判断，如果你是主动聊的，那就停下来，等面试官追问；如果这是面试官问的，那就接着答细节）MySQL 的 innodb 引擎，事务提交的关键是将 redo log 写入到 Log buffer，而后 MySQL 调用 write 写入到 OS cache，只有到最后操作系统调用 fsync 的时候，才会落到磁盘上。</p>
+<p>过程：<code>commit -&gt; log buffer -&gt; OS cache -&gt; fsync</code></p>
+<p>数据库有一个参数 <strong><code>innodb_flush_log_at_trx_commit</code></strong> 可以控制刷盘的时机：</p>
+<ul>
+<li>0，写到 log buffer, 每秒刷新；</li>
+<li>1，实时刷新；</li>
+<li>2，写到 OS cache, 每秒刷新</li>
+</ul>
+<p>Redis 的 AOF 机制也面临类似的问题，即 AOF 也不是立刻刷盘，而是写入到了 OS cache，等到缓冲区填满，或者 Redis 决定刷盘才会刷到磁盘。而 redis 有三种策略控制，always 永远, everysec 每秒, no 不主动。默认情况下 everysec，即有一秒钟的数据可能丢失。</p>
+<p>对于大多数要和磁盘打交道的系统来说，都会面临类似的问题，要么选择性能，要么选择强持久性。</p>
+<div class="alert">
+
+<div class="alert-warning-title py-1 px-2">
+  关键点
+</div>
+
+<div class="alert-warning py-1 px-2">
+  提交不等于落盘了，fsync
+</div>
+</div>
+
+<h3 id="67-什么是-redo-log-undo-log-和-binlog">6.7. 什么是 redo log, undo log 和 binlog</h3>
+<ul>
+<li><strong>redo log</strong> 是 innodb 引擎产生的，主要用于支持 MySQL 事务，MySQL 会先写 redo log，而后在写 binlog。redo log 可以保证即使数据库异常重启，数据也不会丢失</li>
+<li><strong>undo log</strong> 是 innodb 引擎产生的，主要时候用于解决事务回滚和 MVCC。数据修改的时候，不仅记录 redo log，也会记录 undo log。在事务执行失败的时候，会使用 undo log 进行回滚；</li>
+<li><strong>binlog</strong> 主要用于复制和数据恢复，记录了写入性的操作。binlog 分成基于语句，基于行和混合模式三种复制模式。</li>
+</ul>
+<p>因为 redo log 生成到 binlog 写入之间有一个时间差，所以为了保证两者的一致性，MySQL 引入了两阶段提交:</p>
+<h4 id="两阶段提交">两阶段提交</h4>
+<ul>
+<li>Prepare 阶段，写入 redo log；</li>
+<li>Commit 阶段，写入 binlog，提交事务；</li>
+</ul>
+<h4 id="刷盘时机">刷盘时机</h4>
+<ul>
+<li>binlog 刷盘可以通过 sync_binlog 参数来控制。0-系统自由判断，1-commit 刷盘，N-每 N 个事务刷盘</li>
+<li>redo log 刷盘可以通过参数 innodb_flush_log_at_trx_commit 控制。0-写入 log buffer，每秒刷新到盘；1-每次提交；2-写入到 OS cache，每秒刷盘；</li>
+</ul>
+<h2 id="参考">参考</h2>
+<ul>
+<li>链接：https://juejin.cn/post/6844903655439597582</li>
+</ul>
+
+          </div>
+
+          <div class="col-12 mb-4">
+            <div class="border-bottom">
+            
+
+
+<p class="edit-page">
+<a href="https://github.com/simonwei97/website/edit/main/content/zh/blog/mysql_basic/index.md">
+  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 编辑本页
+  </a>
+</p>
+
+
+            </div>
+          </div>
+          
+          <div class="col-12">
+              <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light">
+              
+              <a href="/tags/mysql" class="badge"> 
+                  Mysql</a> </li>
+          </div>
+
+          
+          
+<div class="col-12">
+<ul class="pager blog-pager">
+
+<li class="previous">
+<a href="https://www.simonwei.top/blog/kafka_basic/" data-toggle="tooltip" data-placement="top" title="Kafka知识点">&larr; 上一篇</a>
+</li>
+ 
+<li class="next">
+<a href="https://www.simonwei.top/blog/redis_basic/" data-toggle="tooltip" data-placement="top" title="Redis 知识点">下一篇 &rarr;</a>
+</li>
+
+</ul>
+</div>
+
+
+          
+          
+          <div class="col-12">
+          
+           <script src="https://giscus.app/client.js"
+        data-repo="simonwei97/simonwei97.github.io"
+        data-repo-id="R_kgDOJlpFkg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOJlpFks4CWopE"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        
+        data-lang="zh-CN"
+        
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+          
+          </div>
+        </div>
+      </div>
+      <!-- sidebar -->
+      <aside class="col-lg-4 sidebar">
+      <!-- recommend -->
+      
+
+
+      <!-- /recommend -->
+      <!-- toc -->
+      
+<div class="bg-white py-4 box-shadow mb-4 sticky-top aside-toc d-none d-sm-block">
+    <p class="sidebar-title">
+    目录
+    </p>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-什么是死锁怎么解决">1. 什么是死锁？怎么解决？</a></li>
+    <li><a href="#2-隔离级别与锁的关系">2. 隔离级别与锁的关系</a></li>
+    <li><a href="#3mysql-主从同步延时问题如何解决">3.MySQL 主从同步延时问题如何解决？</a></li>
+    <li><a href="#4-一条-sql-语句的执行过程">4. 一条 SQL 语句的执行过程</a></li>
+    <li><a href="#5-索引">5. 索引</a>
+      <ul>
+        <li><a href="#51-最左匹配原则">5.1. 最左匹配原则</a></li>
+        <li><a href="#52-聚簇索引和非聚簇索引的区别">5.2. 聚簇索引和非聚簇索引的区别</a></li>
+        <li><a href="#53-mysql-为什么使用-b树索引">5.3. MySQL 为什么使用 B+树索引</a></li>
+        <li><a href="#54-为什么使用自增主键">5.4. 为什么使用自增主键</a></li>
+        <li><a href="#55-索引的缺点">5.5. 索引的缺点</a></li>
+        <li><a href="#56-索引下推">5.6. 索引下推</a></li>
+        <li><a href="#57-索引失效">5.7. 索引失效</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-事务">6. 事务</a>
+      <ul>
+        <li><a href="#61-mvcc">6.1. MVCC</a></li>
+        <li><a href="#62-mysql-的隔离级别">6.2. MySQL 的隔离级别</a></li>
+        <li><a href="#63-共享锁排它锁">6.3. 共享锁，排它锁</a></li>
+        <li><a href="#64-记录锁临键锁间隙锁">6.4. 记录锁，临键锁，间隙锁</a></li>
+        <li><a href="#65-innodb-引擎和-myisam-引擎的区别">6.5. innodb 引擎和 MyISAM 引擎的区别</a></li>
+        <li><a href="#66-为什么事务提交了但是数据没有保存">6.6. 为什么事务提交了但是数据没有保存</a></li>
+        <li><a href="#67-什么是-redo-log-undo-log-和-binlog">6.7. 什么是 redo log, undo log 和 binlog</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+</div>
+
+      <!-- /toc -->
+      </aside>
+      <!-- /sidebar -->
+    </div>
+  </div>
+</section>
+
+
+
+      
+    
+
+<footer>
+  
+  <div class="footer bg-footer section-sm border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+          
+          <h4 class="text-white mb-5 text-uppercase">关注我</h4>
+          
+          <ul class="list-unstyled">
+            
+            
+            <li class="mb-4 text-color">欢迎来到本站!</li>
+            
+            
+            
+            
+          
+        </div>
+        
+        
+
+        
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">博客</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="/blog/linux_common/">Linux常用命令</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="/blog/asan/">ASAN内存检测工具</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="/blog/data_structure/data_structure/">数据结构</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="/blog/es_bulk_insert_go/">Elasticsearch 批量写入</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="/blog/golang_basic/">Go基础知识总结</a></li>
+            
+          </ul>
+        </div>
+
+        
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">链接</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://kubernetes.io/" target="_blank" rel="noopener">Kubernetes社区</a></li>
+            
+          </ul>
+        </div>
+
+        
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">教程</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://kubernetes.io/zh-cn/docs/tutorials/kubernetes-basics/" target="_blank" rel="noopener">学习 Kubernetes 基础知识</a></li>
+            
+          </ul>
+        </div>
+
+        
+        
+
+        
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5 text-uppercase">友链</h4>
+          <ul class="list-unstyled">
+            
+            <li class="mb-3"><a class="text-color" href="https://jimmysong.io" target="_blank" rel="noopener">Jimmy Song 的博客</a></li>
+            
+            <li class="mb-3"><a class="text-color" href="https://qcrao.com/" target="_blank" rel="noopener">码农桃花源</a></li>
+            
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="copyright py-4 bg-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 text-sm-left text-center">
+          <p class="mb-0 text-color">© 2017-2023 Simon Wei 保留所有权利</p>
+        </div>
+        <div class="col-sm-3 text-sm-right text-center">
+          <ul class="list-inline">
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://github.com/simonwei97" target="_blank" rel="noopener"><i class="fa fa-github "></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://linkedin.com/in/simonweiio" target="_blank" rel="noopener"><i class="fa fa-linkedin "></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="mailto:simonwei@simonwei.top" target="_blank" rel="noopener"><i class="fa fa-envelope "></i></a></li>
+            
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="/blog/index.xml" target="_blank" rel="noopener"><i class="fa fa-rss "></i></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/popper/popper.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/slick/slick.min.js"></script>
+
+<script src="/plugins/venobox/venobox.min.js"></script>
+
+<script src="/plugins/filterizr/jquery.filterizr.min.js"></script>
+
+<script src="/plugins/search/fuse.min.js"></script>
+
+<script src="/plugins/search/mark.js"></script>
+
+<script src="/plugins/hex_md5/hex_md5.js"></script>
+
+<script src="/plugins/anchor/anchor.min.js"></script>
+
+<script src="/plugins/tocbot/tocbot.min.js"></script>
+
+<script src="/plugins/bigger-picture/bigger-picture.min.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="/js/script.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESY906ZWZ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ESY906ZWZ0');
+</script>
+
+
+<!-- Baidu analysis -->
+<meta name="baidu-site-verification" content="g8IYR9SNLF" />
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?11f7d254cfa4e0ca44b175c66d379ecc";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<script>
+
+var mybutton = document.getElementById("backTopBtn");
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+
+
+
+
+<script>
+    anchors.add()
+</script>
+
+
+
+
+<script>
+
+
+
+(function() {
+  'use strict';
+
+  if(!document.queryCommandSupported('copy')) {
+    return;
+  }
+
+  function flashCopyMessage(el, msg) {
+    el.className = "highlight-copy-btn";
+    el.textContent = msg;
+    setTimeout(function() {
+      el.textContent = "";
+      el.className = "highlight-copy-btn fa fa-copy";
+    }, 1000);
+  }
+
+  function selectText(node) {
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    return selection;
+  }
+
+  function addCopyButton(containerEl) {
+    var copyBtn = document.createElement("button");
+    copyBtn.className = "highlight-copy-btn fa fa-copy";
+    copyBtn.textContent = "";
+
+    var codeEl = containerEl.firstElementChild;
+    copyBtn.addEventListener('click', function() {
+      try {
+        var selection = selectText(codeEl);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+        
+        flashCopyMessage(copyBtn, '已复制')
+        
+      } catch(e) {
+        console && console.log(e);
+        flashCopyMessage(copyBtn, 'Failed :\'(')
+      }
+    });
+
+    containerEl.appendChild(copyBtn);
+  }
+
+  
+  var highlightBlocks = document.getElementsByClassName('highlight');
+  Array.prototype.forEach.call(highlightBlocks, addCopyButton);
+})();
+</script>
+
+
+
+
+<script>
+tocbot.init({
+  
+  tocSelector: '.aside-toc #TableOfContents',
+  
+  contentSelector: '.content',
+  
+  headingSelector: 'h1, h2, h3, h4',
+  
+  hasInnerContainers: false,
+  collapseDepth: 3
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/wowchemy-search.min.19451fcb1ed27bb11a0d08ad5cd74a66.js" type="module"></script>
+<script id="search-hit-fuse-template" type="text/x-template">
+  <div class="search-hit" id="summary-{{key}}">
+    <div class="search-hit-content">
+      <div class="search-hit-name">
+        <div class="article-metadata search-hit-type">{{relpermalink}}</div>
+        <a href="{{relpermalink}}">{{title}}</a>
+        <p class="search-hit-description">{{snippet}}</p>
+      </div>
+    </div>
+  </div>
+</script>
+
+
+</body>
+
+</html>

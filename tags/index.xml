@@ -1,0 +1,215 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simon Wei – 标签云</title>
+    <link>https://www.simonwei.top/tags/</link>
+    <description>Recent content in 标签云 on Simon Wei</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
+    <lastBuildDate>Thu, 23 Mar 2023 12:18:40 +0800</lastBuildDate>
+    
+	  <atom:link href="https://www.simonwei.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>linux</title>
+      <link>https://www.simonwei.top/tags/linux/</link>
+      <pubDate>Thu, 23 Mar 2023 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/linux/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://www.simonwei.top/tags/go/</link>
+      <pubDate>Mon, 23 Jan 2023 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/go/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>algo</title>
+      <link>https://www.simonwei.top/tags/algo/</link>
+      <pubDate>Fri, 23 Dec 2022 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/algo/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>es</title>
+      <link>https://www.simonwei.top/tags/es/</link>
+      <pubDate>Sat, 16 Apr 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/es/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>排序</title>
+      <link>https://www.simonwei.top/tags/%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Tue, 01 Mar 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/%E6%8E%92%E5%BA%8F/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>二叉树</title>
+      <link>https://www.simonwei.top/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Sun, 20 Feb 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>https://www.simonwei.top/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sun, 20 Feb 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/%E7%AE%97%E6%B3%95/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://www.simonwei.top/tags/redis/</link>
+      <pubDate>Thu, 27 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/redis/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://www.simonwei.top/tags/mysql/</link>
+      <pubDate>Mon, 24 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/mysql/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>kafka</title>
+      <link>https://www.simonwei.top/tags/kafka/</link>
+      <pubDate>Thu, 20 Jan 2022 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/kafka/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://www.simonwei.top/tags/docker/</link>
+      <pubDate>Sun, 16 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/docker/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>zookeeper</title>
+      <link>https://www.simonwei.top/tags/zookeeper/</link>
+      <pubDate>Sun, 16 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/zookeeper/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>计算机网络</title>
+      <link>https://www.simonwei.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 21 Dec 2021 20:34:13 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>交叉编译</title>
+      <link>https://www.simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Wed, 21 Jul 2021 20:34:13 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>云原生</title>
+      <link>https://www.simonwei.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

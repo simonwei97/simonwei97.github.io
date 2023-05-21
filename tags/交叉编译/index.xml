@@ -1,0 +1,75 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simon Wei – 交叉编译</title>
+    <link>https://www.simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
+    <description>Recent content in 交叉编译 on Simon Wei</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
+    <lastBuildDate>Wed, 21 Jul 2021 20:34:13 +0800</lastBuildDate>
+    
+	  <atom:link href="https://www.simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Linux交叉编译解决办法</title>
+      <link>https://www.simonwei.top/blog/linux_cross_complie/</link>
+      <pubDate>Wed, 21 Jul 2021 20:34:13 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/blog/linux_cross_complie/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;1前提&#34;&gt;1.前提&lt;/h2&gt;
+&lt;p&gt;Linux 物理机内核版本需高于 &lt;code&gt;4.18&lt;/code&gt; 。如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@test ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;$ uname -a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Linux &lt;span class=&#34;nb&#34;&gt;test&lt;/span&gt; 3.10.0-693.el7.x86_64 &lt;span class=&#34;c1&#34;&gt;#1 SMP Tue Aug 22 21:09:27 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2操作步骤&#34;&gt;2.操作步骤&lt;/h2&gt;
+&lt;h3 id=&#34;21安装交叉编译工具-用于编译-arm64-版本程序&#34;&gt;2.1.安装交叉编译工具， 用于编译 arm64 版本程序&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;下载&lt;a href=&#34;https://releases.linaro.org/components/toolchain/binaries/4.9-2017.01/aarch64-linux-gnu/&#34; title=&#34;交叉编译工具&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;交叉编译工具&lt;/a&gt;
+, 这里选择文件 &lt;code&gt;gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu.tar.xz&lt;/code&gt; 下载&lt;/li&gt;
+&lt;li&gt;新建安装目录 &lt;code&gt;mkdir -p /usr/local/ARM-toolchain&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;将安装包解压到该目录下 &lt;code&gt;tar -xf gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu.tar.xz -C /usr/local/ARM-toolchain/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;修改 &lt;code&gt;/etc/bash.bashrc&lt;/code&gt; 文件，加入如下配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Add ARM toolschain path&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -d /usr/local/ARM-toolchain/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/usr/local/ARM-toolchain/gcc-linaro-4.9.4-2017.01-x86_64_aarch64-linux-gnu/bin:&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;执行 &lt;code&gt;source /etc/bash.bashrc&lt;/code&gt;，使配置生效。&lt;/li&gt;
+&lt;li&gt;执行 &lt;code&gt;aarch64-linux-gnu-gcc -v&lt;/code&gt; 测试是否可用。&lt;/li&gt;
+&lt;li&gt;此后在该系统下可指定使用 &lt;code&gt;aarch64-linux-gnu-gcc&lt;/code&gt; 作为交叉编译器&lt;/li&gt;
+&lt;li&gt;进入到目标项目目录下，执行命令 &lt;code&gt;make -xx&lt;/code&gt; 编译 arm 版本程序。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;22安装-docker-版的-qemu-用于运行测试或打包镜像&#34;&gt;2.2.安装 docker 版的 qemu， 用于运行测试或打包镜像&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;下载安装包： &lt;a href=&#34;https://github.com/multiarch/qemu-user-static&#34; title=&#34;https://github.com/multiarch/qemu-user-static&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/multiarch/qemu-user-static&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;安装官方文档执行如下操作，安装配置模拟环境：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uname -m
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 返回 x86_64&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run --rm -t arm64v8/ubuntu uname -m standard_init_linux.go:211: &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; user process caused &lt;span class=&#34;s2&#34;&gt;&amp;#34;exec format error&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run --rm -t arm64v8/ubuntu uname -m aarch64
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;上面步骤完成后，即可在该系统下直接运行 arm64 版本的可执行文件。&lt;/li&gt;
+&lt;li&gt;进入到目标项目目录下，执行命令 &lt;code&gt;make image -xx&lt;/code&gt; 编译 arm 版本程序。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

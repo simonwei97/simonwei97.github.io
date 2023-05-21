@@ -1,0 +1,190 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simon Wei – docker</title>
+    <link>https://www.simonwei.top/categories/docker/</link>
+    <description>Recent content in docker on Simon Wei</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
+    <lastBuildDate>Sun, 16 Jan 2022 17:51:01 +0800</lastBuildDate>
+    
+	  <atom:link href="https://www.simonwei.top/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docker 入门知识简要概述</title>
+      <link>https://www.simonwei.top/blog/docker_basic/</link>
+      <pubDate>Sun, 16 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/blog/docker_basic/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;1docker-容器&#34;&gt;1.Docker 容器&lt;/h2&gt;
+&lt;p&gt;Docker 容器本质上是宿主机上的进程。Docker 通过 &lt;code&gt;namespace&lt;/code&gt; 实现了资源隔离，通过 &lt;code&gt;cgroups&lt;/code&gt; 实现资源限制，通过写时复制机制(&lt;code&gt;Copy-on-write&lt;/code&gt;)实现了高效的文件操作。&lt;/p&gt;
+&lt;h3 id=&#34;11-docker-的资源隔离&#34;&gt;1.1. Docker 的资源隔离&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;namespace&lt;/code&gt;&lt;/strong&gt; 提供了以下 6 项隔离：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;namespace&lt;/th&gt;
+&lt;th&gt;系统调用参数&lt;/th&gt;
+&lt;th&gt;隔离内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Unix Time-sharing System(UTS)&lt;/td&gt;
+&lt;td&gt;CLONE_NEWUTS&lt;/td&gt;
+&lt;td&gt;主机和域名&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unix Interprocess Communication(IPC)&lt;/td&gt;
+&lt;td&gt;CLONE_NEWIPC&lt;/td&gt;
+&lt;td&gt;信号量、消息队列和共享内存&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Process identifier(PID)&lt;/td&gt;
+&lt;td&gt;CLONE_NEWPID&lt;/td&gt;
+&lt;td&gt;进程编号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Network&lt;/td&gt;
+&lt;td&gt;CLONE_NEWNET&lt;/td&gt;
+&lt;td&gt;网络设备、网络栈、端口等&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mount&lt;/td&gt;
+&lt;td&gt;CLONE_NEWNS&lt;/td&gt;
+&lt;td&gt;挂载点(文件系统)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;User&lt;/td&gt;
+&lt;td&gt;CLONE_NEWUSER&lt;/td&gt;
+&lt;td&gt;用户和用户组&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class=&#34;alert&#34;&gt;
+
+&lt;div class=&#34;alert-note-title py-1 px-2&#34;&gt;
+  UTS namespace
+&lt;/div&gt;
+
+&lt;div class=&#34;alert-note py-1 px-2&#34;&gt;
+  
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;分时系统(&lt;code&gt;Time-sharing System&lt;/code&gt;)中一台主机连接了若干个终端，每个终端有一个用户在使用。分时系统(&lt;code&gt;Time-sharing System&lt;/code&gt;)中一台主机连接了若干个终端，每个终端有一个用户在使用。&lt;/p&gt;
+&lt;div class=&#34;alert&#34;&gt;
+
+&lt;div class=&#34;alert-note-title py-1 px-2&#34;&gt;
+  IPC namespace
+&lt;/div&gt;
+
+&lt;div class=&#34;alert-note py-1 px-2&#34;&gt;
+  
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Linux 进程间通信由 &lt;strong&gt;&lt;code&gt;System V IPC&lt;/code&gt;&lt;/strong&gt;，基于 Socket 的 IPC 和 POSIX IPC 发展而来，主要的通信手段有:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;管道(&lt;code&gt;Pipe&lt;/code&gt;)
+&lt;ul&gt;
+&lt;li&gt;无名管道 - 只能用于具有亲缘关系的进程之间的通信（父子进程或者兄弟进程之间）
+半双工的通信模式，具有固定的读端和写端
+是一种特殊的文件，不属于其他任何文件系统并且只存在于内存中&lt;/li&gt;
+&lt;li&gt;有名管道(&lt;code&gt;FIFO&lt;/code&gt;)
+使互不相关的两个进程间实现彼此通信
+可以通过路径名来指出，并且在文件系统中是可见的。在建立了管道之后，两个进程就可以把它当做普通文件一样进行读写操作
+先进先出规则&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;信号(&lt;code&gt;Signal&lt;/code&gt;)：用于通知接受进程有某种事件发生，除了用于进程间通信外，进程还可以发送信号给进程本身&lt;/li&gt;
+&lt;li&gt;消息队列(Message Queue)
+有足够权限的进程可以向队列中添加消息，被赋予读权限的进程则可以读走队列中的消息。
+克服了信号承载信息量少，管道只能承载无格式字节流（要求管道的读出方和写入方必须事先约定好数据的格式，比如多少字节算作一个消息等）以及缓冲区大小受限等缺点。&lt;/li&gt;
+&lt;li&gt;共享内存
+使得多个进程可以访问同一块内存空间。&lt;/li&gt;
+&lt;li&gt;信号量(&lt;code&gt;semaphore&lt;/code&gt;)
+主要用于进程间以及同一进程不同线程之间的同步。&lt;/li&gt;
+&lt;li&gt;套接字(&lt;code&gt;Socket&lt;/code&gt;): 可用于不同机器之间的进程间通信，必须包含
+&lt;ul&gt;
+&lt;li&gt;地址，由 ip 与 端口组成，像 192.168.0.1:80。&lt;/li&gt;
+&lt;li&gt;协议，socket 所用的传输协议 TCP、UDP、raw IP。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;PC 资源包括信号量、消息队列和共享内存。通过 IPC namespace 可以实现容器与宿主机、容器与容器之间的 IPC 隔离。&lt;/p&gt;
+&lt;div class=&#34;alert&#34;&gt;
+
+&lt;div class=&#34;alert-note-title py-1 px-2&#34;&gt;
+  PID namespace
+&lt;/div&gt;
+
+&lt;div class=&#34;alert-note py-1 px-2&#34;&gt;
+  
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;PID namespace&lt;/code&gt;&lt;/strong&gt; 隔离对进程 PID 重新编号，两个不同 namespace 下的进程没有关系，因此 PID 也可以相同。内核为所有的 PID namespace 维护了一个树状结构。&lt;/p&gt;
+&lt;div class=&#34;alert&#34;&gt;
+
+&lt;div class=&#34;alert-note-title py-1 px-2&#34;&gt;
+  Mount namespace
+&lt;/div&gt;
+
+&lt;div class=&#34;alert-note py-1 px-2&#34;&gt;
+  
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;mount namespace&lt;/code&gt;&lt;/strong&gt; 通过隔离文件系统挂载点隔离文件系统，它是第一个 Linux namespace，标识位为 &lt;code&gt;CLONE_NEWNS&lt;/code&gt;。隔离之后不同的 &lt;code&gt;mount namespace&lt;/code&gt; 中的文件结构互不影响。&lt;/p&gt;
+&lt;div class=&#34;alert&#34;&gt;
+
+&lt;div class=&#34;alert-note-title py-1 px-2&#34;&gt;
+  Network namespace
+&lt;/div&gt;
+
+&lt;div class=&#34;alert-note py-1 px-2&#34;&gt;
+  
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;network namespace&lt;/code&gt;&lt;/strong&gt; 提供了关于网络资源的隔离，包括网络设备、IPv4 和 IPv6 协议栈、IP 路由表、防火墙、/proc/net 目录、/sys/class/net 目录、套接字(socket)等。&lt;/p&gt;
+&lt;div class=&#34;alert&#34;&gt;
+
+&lt;div class=&#34;alert-note-title py-1 px-2&#34;&gt;
+  User namespace
+&lt;/div&gt;
+
+&lt;div class=&#34;alert-note py-1 px-2&#34;&gt;
+  
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;user namespace&lt;/code&gt;&lt;/strong&gt; 主要隔离了安全相关的标识符和属性(用户 ID、用户组 ID、root 目录、key(密钥)、特殊权限)。&lt;/p&gt;
+&lt;h3 id=&#34;12-docker-的资源限制&#34;&gt;1.2. Docker 的资源限制&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;cgroups&lt;/code&gt;&lt;/strong&gt; 是 Linux 内核提供的一种机制。&lt;/p&gt;
+&lt;p&gt;这种机制可以根据需求把一系列系统任务及其子任务整合(或分隔)到按资源划分等级的不同组内，限制了被 &lt;code&gt;namespace&lt;/code&gt; 隔离起来的资源，并为资源设置权重、计算使用量(&lt;code&gt;CPU, Memory, IO&lt;/code&gt; 等)、操控任务启停等。&lt;/p&gt;
+&lt;p&gt;从而为系统资源管理提供了一个统一的框架。&lt;/p&gt;
+&lt;p&gt;从本质上来说，cgroups 是内核附加在程序上的一系列钩子(Hook),通过程序运行时对资源的调度触发相应的钩子以达到资源追踪和限制的目的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;cgroup&lt;/code&gt;&lt;/strong&gt; 提供的主要功能如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;资源限制：限制任务使用的资源总额，并在超过这个配额时发出提示&lt;/li&gt;
+&lt;li&gt;优先级分配：分配 CPU 时间片数量及磁盘 IO 带宽大小、控制任务运行的优先级&lt;/li&gt;
+&lt;li&gt;资源统计：统计系统资源使用量，如 CPU 使用时长、内存用量等&lt;/li&gt;
+&lt;li&gt;任务控制：对任务执行挂起、恢复等操作&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

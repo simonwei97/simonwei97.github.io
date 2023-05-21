@@ -1,0 +1,99 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simon Wei – zookeeper</title>
+    <link>https://www.simonwei.top/categories/zookeeper/</link>
+    <description>Recent content in zookeeper on Simon Wei</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
+    <lastBuildDate>Sun, 16 Jan 2022 17:51:01 +0800</lastBuildDate>
+    
+	  <atom:link href="https://www.simonwei.top/categories/zookeeper/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Zookeeper 知识点</title>
+      <link>https://www.simonwei.top/blog/zookeeper_basic/</link>
+      <pubDate>Sun, 16 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/blog/zookeeper_basic/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;1-zookeeper-是什么有什么功能&#34;&gt;1. Zookeeper 是什么，有什么功能&lt;/h2&gt;
+&lt;p&gt;Zookeeper 是一个典型的分布式数据一致性的解决方案。&lt;/p&gt;
+&lt;p&gt;Zookeeper 的典型应用场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据发布/订阅&lt;/li&gt;
+&lt;li&gt;负载均衡&lt;/li&gt;
+&lt;li&gt;命名服务&lt;/li&gt;
+&lt;li&gt;分布式协调/通知&lt;/li&gt;
+&lt;li&gt;集群管理&lt;/li&gt;
+&lt;li&gt;Master&lt;/li&gt;
+&lt;li&gt;分布式锁&lt;/li&gt;
+&lt;li&gt;分布式队列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-zookeeper-部署模式&#34;&gt;2. Zookeeper 部署模式&lt;/h2&gt;
+&lt;p&gt;Zookeeper 有两种运行模式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;集群模式&lt;/li&gt;
+&lt;li&gt;单机模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;还有一种伪集群模式，在单机模式下模拟集群的 Zookeeper 服务。&lt;/p&gt;
+&lt;h2 id=&#34;3-zookeeper-是如何保证主从节点的状态同步&#34;&gt;3. Zookeeper 是如何保证主从节点的状态同步&lt;/h2&gt;
+&lt;p&gt;zookeeper 的核心是原子广播，这个机制保证了各个 server 之间的同步。实现这个机制的协议叫做&lt;code&gt;zab&lt;/code&gt;协议。&lt;code&gt;zab&lt;/code&gt; 协议有两种，分别是恢复模式（选主）和广播模式（同步）。
+当服务启动或者在领导者崩溃之后，zab 就进入了恢复模式，当领导者被选举出来后，且大多数 server 完成了与 leader 的状态同步之后，恢复模式就结束了。状态同步保证了
+leader 和 server 具有相同的系统状态。&lt;/p&gt;
+&lt;h2 id=&#34;4-zookeeper-的通知机制&#34;&gt;4. Zookeeper 的通知机制&lt;/h2&gt;
+&lt;p&gt;客户端会对某一个 &lt;code&gt;znode&lt;/code&gt; 建立一个 &lt;code&gt;watcher&lt;/code&gt; 事件，当该 &lt;code&gt;znode&lt;/code&gt; 发生变化时，这些客户端会受到 &lt;code&gt;Zookeeper&lt;/code&gt; 的通知，然后客户端可以根据 &lt;code&gt;znode&lt;/code&gt; 变化来做出业务上的改变。ß&lt;/p&gt;
+&lt;h2 id=&#34;5-zookeeper-的分布式锁实现方式&#34;&gt;5. Zookeeper 的分布式锁实现方式&lt;/h2&gt;
+&lt;p&gt;使用 Zookeeper 实现分布式锁的算法流程，假设锁空间根节点为 &lt;code&gt;/lock&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;客户端连接 Zookeeper，并在 &lt;code&gt;/lock&lt;/code&gt; 下创建临时的且有序的子节点，第一个客户端对应的子节点为 &lt;code&gt;/lock/lock-0000000000&lt;/code&gt;，第二个为 &lt;code&gt;/lock/lock-0000000001&lt;/code&gt;，
+以此类推；&lt;/li&gt;
+&lt;li&gt;客户端获取 下的子节点列表，判断自己创建的子节点是否为当前子节点列表中序号最小的子节点，如果是则认为获得锁，否则监听刚好在自己之前一位的子节点删除消息，获得子节点
+变更通知后重复此步骤直至获得锁；&lt;/li&gt;
+&lt;li&gt;执行业务代码；&lt;/li&gt;
+&lt;li&gt;完成业务流程后，删除对应的子节点释放锁；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;6-zookeeper-采用的哪种分布式一致性协议还有哪些分布式一致性协议&#34;&gt;6. Zookeeper 采用的哪种分布式一致性协议？还有哪些分布式一致性协议&lt;/h2&gt;
+&lt;p&gt;常见的分布式一致性协议有：两阶段提交协议，三阶段提交协议，向量时钟，RWN 协议，&lt;code&gt;paxos 协议&lt;/code&gt;，&lt;code&gt;Raft 协议&lt;/code&gt;，zk 采用的是 &lt;code&gt;paxos 协议&lt;/code&gt;ß。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;两阶段提交协议(2PC)&lt;/p&gt;
+&lt;p&gt;两阶段提交协协议，简称 2PC，是比较常用的解决分布式事务问题的方式，要么所有参与进程都提交事务，要么都取消事务，即实现 ACID 中的原子性(A)的常用手段。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;三阶段提交协议(2PC)&lt;/p&gt;
+&lt;p&gt;3PC 就是在 2PC 的基础上将 2PC 的提交阶段再细分为两个阶段：&lt;strong&gt;预提交阶段&lt;/strong&gt;和&lt;strong&gt;提交阶段&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;向量时钟&lt;/p&gt;
+&lt;p&gt;通过向量空间祖先继承的关系比较，使数据保持最终一致性，这就是向量时钟的基本定义。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NWR 协议&lt;/p&gt;
+&lt;p&gt;NWR 是一种在分布式存储系统中用于控制一致性级别的一种策略。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;paxos 协议&lt;/p&gt;
+&lt;p&gt;见 &lt;a href=&#34;&#34; title=&#34;paxos 协议&#34;&gt;paxos 协议&lt;/a&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Raft 协议&lt;/p&gt;
+&lt;p&gt;见 &lt;a href=&#34;&#34; title=&#34;Raft 协议&#34;&gt;Raft 协议&lt;/a&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

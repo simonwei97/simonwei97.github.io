@@ -1,0 +1,176 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simon Wei – 分类列表</title>
+    <link>https://www.simonwei.top/categories/</link>
+    <description>Recent content in 分类列表 on Simon Wei</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
+    <lastBuildDate>Thu, 23 Mar 2023 12:18:40 +0800</lastBuildDate>
+    
+	  <atom:link href="https://www.simonwei.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>linux</title>
+      <link>https://www.simonwei.top/categories/linux/</link>
+      <pubDate>Thu, 23 Mar 2023 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/linux/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://www.simonwei.top/categories/go/</link>
+      <pubDate>Mon, 23 Jan 2023 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/go/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>algo</title>
+      <link>https://www.simonwei.top/categories/algo/</link>
+      <pubDate>Fri, 23 Dec 2022 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/algo/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>es</title>
+      <link>https://www.simonwei.top/categories/es/</link>
+      <pubDate>Sat, 16 Apr 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/es/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://www.simonwei.top/categories/redis/</link>
+      <pubDate>Thu, 27 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/redis/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://www.simonwei.top/categories/mysql/</link>
+      <pubDate>Mon, 24 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/mysql/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>kafka</title>
+      <link>https://www.simonwei.top/categories/kafka/</link>
+      <pubDate>Thu, 20 Jan 2022 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/kafka/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://www.simonwei.top/categories/docker/</link>
+      <pubDate>Sun, 16 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/docker/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>zookeeper</title>
+      <link>https://www.simonwei.top/categories/zookeeper/</link>
+      <pubDate>Sun, 16 Jan 2022 17:51:01 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/zookeeper/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>计算机网络</title>
+      <link>https://www.simonwei.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 21 Dec 2021 20:34:13 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>https://www.simonwei.top/categories/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/%E7%AE%97%E6%B3%95/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>云原生</title>
+      <link>https://www.simonwei.top/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.simonwei.top/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
