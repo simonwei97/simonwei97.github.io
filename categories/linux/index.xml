@@ -6,7 +6,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
-    <lastBuildDate>Thu, 23 Mar 2023 12:18:40 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Oct 2022 12:18:40 +0800</lastBuildDate>
     
 	  <atom:link href="https://www.simonwei.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,10 +18,10 @@
     
     <item>
       <title>Linux常用命令</title>
-      <link>https://www.simonwei.top/blog/linux_common/</link>
-      <pubDate>Thu, 23 Mar 2023 12:18:40 +0800</pubDate>
+      <link>https://www.simonwei.top/blog/linux_common_command/</link>
+      <pubDate>Sun, 23 Oct 2022 12:18:40 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/linux_common/</guid>
+      <guid>https://www.simonwei.top/blog/linux_common_command/</guid>
       <description>
         
         

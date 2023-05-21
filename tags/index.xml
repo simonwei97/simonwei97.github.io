@@ -6,7 +6,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
-    <lastBuildDate>Thu, 23 Mar 2023 12:18:40 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Jan 2023 12:18:40 +0800</lastBuildDate>
     
 	  <atom:link href="https://www.simonwei.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,19 +15,6 @@
         
       
     
-    
-    <item>
-      <title>linux</title>
-      <link>https://www.simonwei.top/tags/linux/</link>
-      <pubDate>Thu, 23 Mar 2023 12:18:40 +0800</pubDate>
-      
-      <guid>https://www.simonwei.top/tags/linux/</guid>
-      <description>
-        
-        
-        
-      </description>
-    </item>
     
     <item>
       <title>go</title>
@@ -48,6 +35,32 @@
       <pubDate>Fri, 23 Dec 2022 12:18:40 +0800</pubDate>
       
       <guid>https://www.simonwei.top/tags/algo/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://www.simonwei.top/tags/linux/</link>
+      <pubDate>Sun, 23 Oct 2022 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/linux/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://www.simonwei.top/tags/git/</link>
+      <pubDate>Mon, 16 May 2022 12:18:40 +0800</pubDate>
+      
+      <guid>https://www.simonwei.top/tags/git/</guid>
       <description>
         
         
