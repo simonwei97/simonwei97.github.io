@@ -1,14 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – 算法</title>
-    <link>https://www.simonwei.top/tags/%E7%AE%97%E6%B3%95/</link>
+    <link>https://simonwei.top/tags/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 算法 on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     <lastBuildDate>Sun, 20 Feb 2022 17:51:01 +0800</lastBuildDate>
     
-	  <atom:link href="https://www.simonwei.top/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -18,10 +18,10 @@
     
     <item>
       <title>二叉树的遍历(Go)</title>
-      <link>https://www.simonwei.top/blog/binary_tree_traversal_go/</link>
+      <link>https://simonwei.top/blog/binary_tree_traversal_go/</link>
       <pubDate>Sun, 20 Feb 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/binary_tree_traversal_go/</guid>
+      <guid>https://simonwei.top/blog/binary_tree_traversal_go/</guid>
       <description>
         
         
@@ -214,10 +214,10 @@
     
     <item>
       <title>算法</title>
-      <link>https://www.simonwei.top/algo/</link>
+      <link>https://simonwei.top/algo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.simonwei.top/algo/</guid>
+      <guid>https://simonwei.top/algo/</guid>
       <description>
         
         

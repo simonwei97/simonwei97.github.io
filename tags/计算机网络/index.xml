@@ -1,14 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – 计算机网络</title>
-    <link>https://www.simonwei.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <link>https://simonwei.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
     <description>Recent content in 计算机网络 on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     <lastBuildDate>Tue, 21 Dec 2021 20:34:13 +0800</lastBuildDate>
     
-	  <atom:link href="https://www.simonwei.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -18,10 +18,10 @@
     
     <item>
       <title>网络编程知识</title>
-      <link>https://www.simonwei.top/blog/network_basic/</link>
+      <link>https://simonwei.top/blog/network_basic/</link>
       <pubDate>Tue, 21 Dec 2021 20:34:13 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/network_basic/</guid>
+      <guid>https://simonwei.top/blog/network_basic/</guid>
       <description>
         
         
@@ -135,7 +135,7 @@
   
   
     
-    &lt;img src=&#34;https://www.simonwei.top/blog/network_basic/sanciwoshou.png&#34; data-img=&#34;/blog/network_basic/sanciwoshou.png&#34; data-width=&#34;1234&#34; data-height=&#34;756&#34; alt=&#34;image&#34; data-caption=&#34;三次握手&#34;&gt;
+    &lt;img src=&#34;https://simonwei.top/blog/network_basic/sanciwoshou.png&#34; data-img=&#34;/blog/network_basic/sanciwoshou.png&#34; data-width=&#34;1234&#34; data-height=&#34;756&#34; alt=&#34;image&#34; data-caption=&#34;三次握手&#34;&gt;
     
   
   &lt;figcaption&gt;三次握手&lt;/figcaption&gt;
@@ -161,7 +161,7 @@
   
   
     
-    &lt;img src=&#34;https://www.simonwei.top/blog/network_basic/sicihuishou.png&#34; data-img=&#34;/blog/network_basic/sicihuishou.png&#34; data-width=&#34;1194&#34; data-height=&#34;864&#34; alt=&#34;image&#34; data-caption=&#34;四次挥手&#34;&gt;
+    &lt;img src=&#34;https://simonwei.top/blog/network_basic/sicihuishou.png&#34; data-img=&#34;/blog/network_basic/sicihuishou.png&#34; data-width=&#34;1194&#34; data-height=&#34;864&#34; alt=&#34;image&#34; data-caption=&#34;四次挥手&#34;&gt;
     
   
   &lt;figcaption&gt;四次挥手&lt;/figcaption&gt;
@@ -351,7 +351,7 @@
   
   
     
-    &lt;img src=&#34;https://www.simonwei.top/blog/network_basic/resolve_url.png&#34; data-img=&#34;/blog/network_basic/resolve_url.png&#34; data-width=&#34;896&#34; data-height=&#34;346&#34; alt=&#34;image&#34; data-caption=&#34;浏览器解析URL返回&#34;&gt;
+    &lt;img src=&#34;https://simonwei.top/blog/network_basic/resolve_url.png&#34; data-img=&#34;/blog/network_basic/resolve_url.png&#34; data-width=&#34;896&#34; data-height=&#34;346&#34; alt=&#34;image&#34; data-caption=&#34;浏览器解析URL返回&#34;&gt;
     
   
   &lt;figcaption&gt;浏览器解析URL返回&lt;/figcaption&gt;

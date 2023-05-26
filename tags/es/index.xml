@@ -1,14 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – es</title>
-    <link>https://www.simonwei.top/tags/es/</link>
+    <link>https://simonwei.top/tags/es/</link>
     <description>Recent content in es on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     <lastBuildDate>Sat, 16 Apr 2022 17:51:01 +0800</lastBuildDate>
     
-	  <atom:link href="https://www.simonwei.top/tags/es/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/tags/es/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -18,10 +18,10 @@
     
     <item>
       <title>Elasticsearch 批量写入</title>
-      <link>https://www.simonwei.top/blog/es_bulk_insert_go/</link>
+      <link>https://simonwei.top/blog/es_bulk_insert_go/</link>
       <pubDate>Sat, 16 Apr 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/es_bulk_insert_go/</guid>
+      <guid>https://simonwei.top/blog/es_bulk_insert_go/</guid>
       <description>
         
         
@@ -191,10 +191,10 @@
     
     <item>
       <title>Elasticsearch 知识点</title>
-      <link>https://www.simonwei.top/blog/es_basic/</link>
+      <link>https://simonwei.top/blog/es_basic/</link>
       <pubDate>Sun, 30 Jan 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/es_basic/</guid>
+      <guid>https://simonwei.top/blog/es_basic/</guid>
       <description>
         
         

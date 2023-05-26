@@ -1,14 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – git</title>
-    <link>https://www.simonwei.top/categories/git/</link>
+    <link>https://simonwei.top/categories/git/</link>
     <description>Recent content in git on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     <lastBuildDate>Mon, 16 May 2022 12:18:40 +0800</lastBuildDate>
     
-	  <atom:link href="https://www.simonwei.top/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -18,10 +18,10 @@
     
     <item>
       <title>一台电脑上设置多个GitHub账号</title>
-      <link>https://www.simonwei.top/blog/multi_git_config/</link>
+      <link>https://simonwei.top/blog/multi_git_config/</link>
       <pubDate>Mon, 16 May 2022 12:18:40 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/multi_git_config/</guid>
+      <guid>https://simonwei.top/blog/multi_git_config/</guid>
       <description>
         
         
@@ -51,7 +51,7 @@
   
   
     
-    &lt;img src=&#34;https://www.simonwei.top/blog/multi_git_config/GitHub-Setting-SSH-Key.png&#34; data-img=&#34;/blog/multi_git_config/GitHub-Setting-SSH-Key.png&#34; data-width=&#34;1902&#34; data-height=&#34;1140&#34; alt=&#34;image&#34; data-caption=&#34;GitHub-Setting-SSH-Key&#34;&gt;
+    &lt;img src=&#34;https://simonwei.top/blog/multi_git_config/GitHub-Setting-SSH-Key.png&#34; data-img=&#34;/blog/multi_git_config/GitHub-Setting-SSH-Key.png&#34; data-width=&#34;1902&#34; data-height=&#34;1140&#34; alt=&#34;image&#34; data-caption=&#34;GitHub-Setting-SSH-Key&#34;&gt;
     
   
   &lt;figcaption&gt;GitHub-Setting-SSH-Key&lt;/figcaption&gt;

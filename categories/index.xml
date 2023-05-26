@@ -1,14 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – 分类列表</title>
-    <link>https://www.simonwei.top/categories/</link>
+    <link>https://simonwei.top/categories/</link>
     <description>Recent content in 分类列表 on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     <lastBuildDate>Mon, 23 Jan 2023 12:18:40 +0800</lastBuildDate>
     
-	  <atom:link href="https://www.simonwei.top/categories/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -18,10 +18,10 @@
     
     <item>
       <title>go</title>
-      <link>https://www.simonwei.top/categories/go/</link>
+      <link>https://simonwei.top/categories/go/</link>
       <pubDate>Mon, 23 Jan 2023 12:18:40 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/go/</guid>
+      <guid>https://simonwei.top/categories/go/</guid>
       <description>
         
         
@@ -31,10 +31,10 @@
     
     <item>
       <title>algo</title>
-      <link>https://www.simonwei.top/categories/algo/</link>
+      <link>https://simonwei.top/categories/algo/</link>
       <pubDate>Fri, 23 Dec 2022 12:18:40 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/algo/</guid>
+      <guid>https://simonwei.top/categories/algo/</guid>
       <description>
         
         
@@ -44,10 +44,10 @@
     
     <item>
       <title>linux</title>
-      <link>https://www.simonwei.top/categories/linux/</link>
+      <link>https://simonwei.top/categories/linux/</link>
       <pubDate>Sun, 23 Oct 2022 12:18:40 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/linux/</guid>
+      <guid>https://simonwei.top/categories/linux/</guid>
       <description>
         
         
@@ -57,10 +57,10 @@
     
     <item>
       <title>git</title>
-      <link>https://www.simonwei.top/categories/git/</link>
+      <link>https://simonwei.top/categories/git/</link>
       <pubDate>Mon, 16 May 2022 12:18:40 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/git/</guid>
+      <guid>https://simonwei.top/categories/git/</guid>
       <description>
         
         
@@ -70,10 +70,10 @@
     
     <item>
       <title>es</title>
-      <link>https://www.simonwei.top/categories/es/</link>
+      <link>https://simonwei.top/categories/es/</link>
       <pubDate>Sat, 16 Apr 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/es/</guid>
+      <guid>https://simonwei.top/categories/es/</guid>
       <description>
         
         
@@ -83,10 +83,10 @@
     
     <item>
       <title>redis</title>
-      <link>https://www.simonwei.top/categories/redis/</link>
+      <link>https://simonwei.top/categories/redis/</link>
       <pubDate>Thu, 27 Jan 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/redis/</guid>
+      <guid>https://simonwei.top/categories/redis/</guid>
       <description>
         
         
@@ -96,10 +96,10 @@
     
     <item>
       <title>mysql</title>
-      <link>https://www.simonwei.top/categories/mysql/</link>
+      <link>https://simonwei.top/categories/mysql/</link>
       <pubDate>Mon, 24 Jan 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/mysql/</guid>
+      <guid>https://simonwei.top/categories/mysql/</guid>
       <description>
         
         
@@ -109,10 +109,10 @@
     
     <item>
       <title>kafka</title>
-      <link>https://www.simonwei.top/categories/kafka/</link>
+      <link>https://simonwei.top/categories/kafka/</link>
       <pubDate>Thu, 20 Jan 2022 12:18:40 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/kafka/</guid>
+      <guid>https://simonwei.top/categories/kafka/</guid>
       <description>
         
         
@@ -122,10 +122,10 @@
     
     <item>
       <title>docker</title>
-      <link>https://www.simonwei.top/categories/docker/</link>
+      <link>https://simonwei.top/categories/docker/</link>
       <pubDate>Sun, 16 Jan 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/docker/</guid>
+      <guid>https://simonwei.top/categories/docker/</guid>
       <description>
         
         
@@ -135,10 +135,10 @@
     
     <item>
       <title>zookeeper</title>
-      <link>https://www.simonwei.top/categories/zookeeper/</link>
+      <link>https://simonwei.top/categories/zookeeper/</link>
       <pubDate>Sun, 16 Jan 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/zookeeper/</guid>
+      <guid>https://simonwei.top/categories/zookeeper/</guid>
       <description>
         
         
@@ -148,10 +148,10 @@
     
     <item>
       <title>计算机网络</title>
-      <link>https://www.simonwei.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+      <link>https://simonwei.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Tue, 21 Dec 2021 20:34:13 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
+      <guid>https://simonwei.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
       <description>
         
         
@@ -161,10 +161,10 @@
     
     <item>
       <title>算法</title>
-      <link>https://www.simonwei.top/categories/%E7%AE%97%E6%B3%95/</link>
+      <link>https://simonwei.top/categories/%E7%AE%97%E6%B3%95/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.simonwei.top/categories/%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://simonwei.top/categories/%E7%AE%97%E6%B3%95/</guid>
       <description>
         
         
@@ -174,10 +174,10 @@
     
     <item>
       <title>云原生</title>
-      <link>https://www.simonwei.top/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
+      <link>https://simonwei.top/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.simonwei.top/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</guid>
+      <guid>https://simonwei.top/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</guid>
       <description>
         
         

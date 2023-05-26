@@ -1,14 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – zookeeper</title>
-    <link>https://www.simonwei.top/tags/zookeeper/</link>
+    <link>https://simonwei.top/tags/zookeeper/</link>
     <description>Recent content in zookeeper on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     <lastBuildDate>Sun, 16 Jan 2022 17:51:01 +0800</lastBuildDate>
     
-	  <atom:link href="https://www.simonwei.top/tags/zookeeper/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/tags/zookeeper/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -18,10 +18,10 @@
     
     <item>
       <title>Zookeeper 知识点</title>
-      <link>https://www.simonwei.top/blog/zookeeper_basic/</link>
+      <link>https://simonwei.top/blog/zookeeper_basic/</link>
       <pubDate>Sun, 16 Jan 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/zookeeper_basic/</guid>
+      <guid>https://simonwei.top/blog/zookeeper_basic/</guid>
       <description>
         
         

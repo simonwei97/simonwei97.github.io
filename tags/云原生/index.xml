@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – 云原生</title>
-    <link>https://www.simonwei.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
+    <link>https://simonwei.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
     <description>Recent content in 云原生 on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     
-	  <atom:link href="https://www.simonwei.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>博客</title>
-      <link>https://www.simonwei.top/blog/</link>
+      <link>https://simonwei.top/blog/</link>
       <pubDate>Mon, 23 Jan 2023 12:18:40 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/</guid>
+      <guid>https://simonwei.top/blog/</guid>
       <description>
         
         

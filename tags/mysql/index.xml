@@ -1,14 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – mysql</title>
-    <link>https://www.simonwei.top/tags/mysql/</link>
+    <link>https://simonwei.top/tags/mysql/</link>
     <description>Recent content in mysql on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     <lastBuildDate>Mon, 24 Jan 2022 17:51:01 +0800</lastBuildDate>
     
-	  <atom:link href="https://www.simonwei.top/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -18,10 +18,10 @@
     
     <item>
       <title>MySQL 知识点</title>
-      <link>https://www.simonwei.top/blog/mysql_basic/</link>
+      <link>https://simonwei.top/blog/mysql_basic/</link>
       <pubDate>Mon, 24 Jan 2022 17:51:01 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/mysql_basic/</guid>
+      <guid>https://simonwei.top/blog/mysql_basic/</guid>
       <description>
         
         
@@ -75,7 +75,7 @@
   
   
     
-    &lt;img src=&#34;https://www.simonwei.top/blog/mysql_basic/sql_pipeline.png&#34; data-img=&#34;/blog/mysql_basic/sql_pipeline.png&#34; data-width=&#34;1664&#34; data-height=&#34;1168&#34; alt=&#34;image&#34; data-caption=&#34;一条SQL语句的执行过程&#34;&gt;
+    &lt;img src=&#34;https://simonwei.top/blog/mysql_basic/sql_pipeline.png&#34; data-img=&#34;/blog/mysql_basic/sql_pipeline.png&#34; data-width=&#34;1664&#34; data-height=&#34;1168&#34; alt=&#34;image&#34; data-caption=&#34;一条SQL语句的执行过程&#34;&gt;
     
   
   &lt;figcaption&gt;一条SQL语句的执行过程&lt;/figcaption&gt;

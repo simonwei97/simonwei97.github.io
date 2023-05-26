@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – 搜索结果</title>
-    <link>https://www.simonwei.top/search/</link>
+    <link>https://simonwei.top/search/</link>
     <description>Recent content in 搜索结果 on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     
-	  <atom:link href="https://www.simonwei.top/search/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/search/index.xml" rel="self" type="application/rss+xml" />
     
     
       

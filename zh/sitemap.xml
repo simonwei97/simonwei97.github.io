@@ -2,298 +2,298 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.simonwei.top/blog/asan/</loc>
+    <loc>https://simonwei.top/blog/asan/</loc>
     <lastmod>2023-01-23T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/go/</loc>
+    <loc>https://simonwei.top/tags/go/</loc>
     <lastmod>2023-01-23T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/go/</loc>
+    <loc>https://simonwei.top/categories/go/</loc>
     <lastmod>2023-01-23T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/</loc>
-    <lastmod>2023-01-23T12:18:40+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://www.simonwei.top/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://www.simonwei.top/"
-                />
-  </url><url>
-    <loc>https://www.simonwei.top/tags/</loc>
+    <loc>https://simonwei.top/</loc>
     <lastmod>2023-01-23T12:18:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/tags/"
+                href="https://simonwei.top/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/tags/"
+                href="https://simonwei.top/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/blog/</loc>
+    <loc>https://simonwei.top/tags/</loc>
     <lastmod>2023-01-23T12:18:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/blog/"
+                href="https://simonwei.top/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/blog/"
+                href="https://simonwei.top/tags/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/categories/</loc>
+    <loc>https://simonwei.top/blog/</loc>
     <lastmod>2023-01-23T12:18:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/categories/"
+                href="https://simonwei.top/en/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/categories/"
+                href="https://simonwei.top/blog/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/tags/algo/</loc>
+    <loc>https://simonwei.top/categories/</loc>
+    <lastmod>2023-01-23T12:18:40+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://simonwei.top/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://simonwei.top/categories/"
+                />
+  </url><url>
+    <loc>https://simonwei.top/tags/algo/</loc>
     <lastmod>2022-12-23T12:18:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/tags/algo/"
+                href="https://simonwei.top/en/tags/algo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/tags/algo/"
+                href="https://simonwei.top/tags/algo/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/categories/algo/</loc>
+    <loc>https://simonwei.top/categories/algo/</loc>
     <lastmod>2022-12-23T12:18:40+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/categories/algo/"
+                href="https://simonwei.top/en/categories/algo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/categories/algo/"
+                href="https://simonwei.top/categories/algo/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/blog/data_structure/data_structure/</loc>
+    <loc>https://simonwei.top/blog/data_structure/data_structure/</loc>
     <lastmod>2022-12-23T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/linux/</loc>
+    <loc>https://simonwei.top/tags/linux/</loc>
     <lastmod>2022-10-23T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/linux/</loc>
+    <loc>https://simonwei.top/categories/linux/</loc>
     <lastmod>2022-10-23T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/linux_common_command/</loc>
+    <loc>https://simonwei.top/blog/linux_common_command/</loc>
     <lastmod>2022-10-23T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/git/</loc>
+    <loc>https://simonwei.top/tags/git/</loc>
     <lastmod>2022-05-16T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/git/</loc>
+    <loc>https://simonwei.top/categories/git/</loc>
     <lastmod>2022-05-16T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/multi_git_config/</loc>
+    <loc>https://simonwei.top/blog/multi_git_config/</loc>
     <lastmod>2022-05-16T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/es_bulk_insert_go/</loc>
+    <loc>https://simonwei.top/blog/es_bulk_insert_go/</loc>
     <lastmod>2022-04-16T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/es/</loc>
+    <loc>https://simonwei.top/tags/es/</loc>
     <lastmod>2022-04-16T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/es/</loc>
+    <loc>https://simonwei.top/categories/es/</loc>
     <lastmod>2022-04-16T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/golang_basic/</loc>
+    <loc>https://simonwei.top/blog/golang_basic/</loc>
     <lastmod>2022-03-02T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://simonwei.top/tags/%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2022-03-01T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/sort_go/</loc>
+    <loc>https://simonwei.top/blog/sort_go/</loc>
     <lastmod>2022-03-01T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
+    <loc>https://simonwei.top/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
     <lastmod>2022-02-20T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/binary_tree_traversal_go/</loc>
+    <loc>https://simonwei.top/blog/binary_tree_traversal_go/</loc>
     <lastmod>2022-02-20T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://simonwei.top/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2022-02-20T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/es_basic/</loc>
+    <loc>https://simonwei.top/blog/es_basic/</loc>
     <lastmod>2022-01-30T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/redis/</loc>
+    <loc>https://simonwei.top/tags/redis/</loc>
     <lastmod>2022-01-27T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/redis/</loc>
+    <loc>https://simonwei.top/categories/redis/</loc>
     <lastmod>2022-01-27T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/redis_basic/</loc>
+    <loc>https://simonwei.top/blog/redis_basic/</loc>
     <lastmod>2022-01-27T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/mysql/</loc>
+    <loc>https://simonwei.top/tags/mysql/</loc>
     <lastmod>2022-01-24T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/mysql/</loc>
+    <loc>https://simonwei.top/categories/mysql/</loc>
     <lastmod>2022-01-24T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/mysql_basic/</loc>
+    <loc>https://simonwei.top/blog/mysql_basic/</loc>
     <lastmod>2022-01-24T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/kafka/</loc>
+    <loc>https://simonwei.top/tags/kafka/</loc>
     <lastmod>2022-01-20T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/kafka/</loc>
+    <loc>https://simonwei.top/categories/kafka/</loc>
     <lastmod>2022-01-20T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/kafka_basic/</loc>
+    <loc>https://simonwei.top/blog/kafka_basic/</loc>
     <lastmod>2022-01-20T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/docker/</loc>
+    <loc>https://simonwei.top/tags/docker/</loc>
     <lastmod>2022-01-16T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/docker/</loc>
+    <loc>https://simonwei.top/categories/docker/</loc>
     <lastmod>2022-01-16T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/docker_basic/</loc>
+    <loc>https://simonwei.top/blog/docker_basic/</loc>
     <lastmod>2022-01-16T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/zookeeper/</loc>
+    <loc>https://simonwei.top/tags/zookeeper/</loc>
     <lastmod>2022-01-16T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/zookeeper/</loc>
+    <loc>https://simonwei.top/categories/zookeeper/</loc>
     <lastmod>2022-01-16T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/zookeeper_basic/</loc>
+    <loc>https://simonwei.top/blog/zookeeper_basic/</loc>
     <lastmod>2022-01-16T17:51:01+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://simonwei.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2021-12-21T20:34:13+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://simonwei.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2021-12-21T20:34:13+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/network_basic/</loc>
+    <loc>https://simonwei.top/blog/network_basic/</loc>
     <lastmod>2021-12-21T20:34:13+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/linux_cross_complie/</loc>
+    <loc>https://simonwei.top/blog/linux_cross_complie/</loc>
     <lastmod>2021-07-21T20:34:13+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</loc>
+    <loc>https://simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</loc>
     <lastmod>2021-07-21T20:34:13+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/gmp_gc/</loc>
+    <loc>https://simonwei.top/blog/gmp_gc/</loc>
     <lastmod>2021-06-23T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/blog/k8s-scheduler/k8s-scheduler/</loc>
+    <loc>https://simonwei.top/blog/k8s-scheduler/k8s-scheduler/</loc>
     <lastmod>2021-06-23T12:18:40+08:00</lastmod>
   </url><url>
-    <loc>https://www.simonwei.top/universal/</loc>
+    <loc>https://simonwei.top/universal/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/universal/"
+                href="https://simonwei.top/en/universal/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/universal/"
+                href="https://simonwei.top/universal/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/about/</loc>
+    <loc>https://simonwei.top/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/about/"
+                href="https://simonwei.top/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/about/"
+                href="https://simonwei.top/about/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/contact/</loc>
+    <loc>https://simonwei.top/contact/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/contact/"
+                href="https://simonwei.top/en/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/contact/"
+                href="https://simonwei.top/contact/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/search/</loc>
+    <loc>https://simonwei.top/search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/search/"
+                href="https://simonwei.top/en/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/search/"
+                href="https://simonwei.top/search/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://simonwei.top/categories/%E7%AE%97%E6%B3%95/</loc>
   </url><url>
-    <loc>https://www.simonwei.top/algo/</loc>
+    <loc>https://simonwei.top/algo/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/algo/"
+                href="https://simonwei.top/en/algo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/algo/"
+                href="https://simonwei.top/algo/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/notice/</loc>
+    <loc>https://simonwei.top/notice/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/notice/"
+                href="https://simonwei.top/en/notice/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/notice/"
+                href="https://simonwei.top/notice/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/friendlink/</loc>
+    <loc>https://simonwei.top/friendlink/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.simonwei.top/en/friendlink/"
+                href="https://simonwei.top/en/friendlink/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://www.simonwei.top/friendlink/"
+                href="https://simonwei.top/friendlink/"
                 />
   </url><url>
-    <loc>https://www.simonwei.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</loc>
+    <loc>https://simonwei.top/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</loc>
   </url><url>
-    <loc>https://www.simonwei.top/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</loc>
+    <loc>https://simonwei.top/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</loc>
   </url>
 </urlset>

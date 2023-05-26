@@ -1,14 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Simon Wei – 交叉编译</title>
-    <link>https://www.simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
+    <link>https://simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
     <description>Recent content in 交叉编译 on Simon Wei</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2017-2023 Simon Wei 保留所有权利</copyright>
     <lastBuildDate>Wed, 21 Jul 2021 20:34:13 +0800</lastBuildDate>
     
-	  <atom:link href="https://www.simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://simonwei.top/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -18,10 +18,10 @@
     
     <item>
       <title>Linux交叉编译解决办法</title>
-      <link>https://www.simonwei.top/blog/linux_cross_complie/</link>
+      <link>https://simonwei.top/blog/linux_cross_complie/</link>
       <pubDate>Wed, 21 Jul 2021 20:34:13 +0800</pubDate>
       
-      <guid>https://www.simonwei.top/blog/linux_cross_complie/</guid>
+      <guid>https://simonwei.top/blog/linux_cross_complie/</guid>
       <description>
         
         
