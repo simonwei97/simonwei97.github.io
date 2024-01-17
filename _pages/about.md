@@ -1,8 +1,8 @@
 ---
 layout: about
-title: About
+title: about
 permalink: /
-subtitle: <b><a href=''>SWE</a></b> | <b>SenseTime</b>.
+subtitle: <a href=''>SWE · SenseTime</a>
 # subtitle: <b><a href='#'>SWE</a></b>. Address. Contacts. Moto. Etc.
 
 profile:
@@ -33,13 +33,11 @@ I am a Lead Machine Learning Scientist at Entos, Inc. -->
 
 I am working as a SWE at [SenseTime](https://www.sensetime.com/).
 
-<!-- I have broad interests in **Distributed System, Cloud Native, ML/AI, Large Language Models (LLMs)**. -->
-
 I got my **B.Eng** degrees from [Southern University of Science and Technology (SUSTech)](https://www.sustech.edu.cn/en/) in 2019, respectively.
 
 ## <a href=''>**Interests**</a>
 
--   Large Language Models (LLMs)
--   ML System
--   Distributed System
--   Cloud Native
+-   *Large Language Models (LLMs)*
+-   *ML System*
+-   *Distributed System*
+-   *Cloud Native*
