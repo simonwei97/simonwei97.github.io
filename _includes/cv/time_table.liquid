@@ -13,6 +13,16 @@
                     </span>
                   </td>
                 </tr>
+                {% if content.img %}
+                <tr>
+                  <td>
+                    <p class="image">{%- include figure.liquid
+                      path=content.img
+                      class="preview rounded"
+                      alt="content thumbnail" -%}</p>
+                  </td>
+                </tr>
+                {% endif %}
                 {% if content.location %}
                   <tr>
                     <td>
