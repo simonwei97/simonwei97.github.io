@@ -5,10 +5,29 @@ date: 2023-09-11 15:09:00
 description: Binary Tree preorder, inorder, postorder and levelorder.
 tags: code
 categories: algo
+giscus_comments: true
+related_posts: false
+related_publications: false
+# redirect: /assets/pdf/example_pdf.pdf
+# mermaid:
+#   enabled: true
+#   zoomable: true
 featured: true
 toc:
     sidebar: right
 ---
+
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/11.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/12.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/7.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div> -->
 
 # Definition
 
